@@ -6,7 +6,7 @@ public class Student {
     int grade;
 
     public Student() {
-        
+
     }
 
     public Student(int id, String name, int grade) {
