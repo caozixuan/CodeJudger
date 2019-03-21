@@ -5,6 +5,10 @@ public class Student {
     String name;
     int grade;
 
+    public Student() {
+        
+    }
+
     public Student(int id, String name, int grade) {
         this.id = id;
         this.name = name;
