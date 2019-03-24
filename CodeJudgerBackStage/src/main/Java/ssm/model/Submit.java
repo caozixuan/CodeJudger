@@ -9,7 +9,7 @@ public class Submit {
 
     String code;                     // 提交的代码（不确定是否要用这种形式）
 
-    Date submitData;                 // 提交日期
+    Date submitDate;                 // 提交日期
     boolean isPassed;                // 是否通过
     double score;                    // 得分
     String codeLanguage;             // 编程语言
@@ -34,8 +34,8 @@ public class Submit {
         this.code = code;
     }
 
-    public void setSubmitData(Date submitData) {
-        this.submitData = submitData;
+    public void setSubmitData(Date submitDate) {
+        this.submitDate = submitDate;
     }
 
     public void setPassed(boolean passed) {
@@ -68,7 +68,7 @@ public class Submit {
     }
 
     public Date getSubmitData() {
-        return submitData;
+        return submitDate;
     }
 
     public boolean isPassed() {

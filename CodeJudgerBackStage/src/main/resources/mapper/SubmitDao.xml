@@ -4,6 +4,7 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="ssm.dao.ISubmitDao">
 
-    <select id="selectStudent" resultType="Student" parameterType="int">SELECT * from Student WHERE id=#{id}</select>
-
+    <select id="getAllSubmitsByUserID" resultType="Submit" parameterType="String">SELECT * from Submit WHERE userID=#{userID}</select>
+    <select id="getSuccessSubmitByUserID" resultType="Submit" parameterType="String">SELECT * from Submit WHERE userID=#{userID} and isPassed=true</select>
+    <select id="getSubmitByID" resultType="Submit" parameterType="String">SELECT * from Submit WHERE uuid=#{userID}</select>
 </mapper>
