@@ -5,6 +5,6 @@
 <mapper namespace="ssm.dao.IProblemDao">
 
     <select id="getAllProblems" resultType="Problem">SELECT * from Problem</select>
-    <select id="getProblemByID" resultType="Problem" parameterType="String">SELECT * from Problem where id=#{uuid}</select>
+    <select id="getProblemByID" resultType="Problem" parameterType="String">SELECT * from Problem where uuid=#{uuid}</select>
 
 </mapper>

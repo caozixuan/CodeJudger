@@ -4,5 +4,14 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="ssm.dao.IUserDao">
 
+    <select id="getUserByID" resultType="User" parameterType="String">SELECT * from User WHERE uuid=#{uuid}</select>
 
+    <insert id="createUser" parameterType="User">INSERT INTO User values (#{uuid},#{nickname},#{email},#{password},1,#{userInformationID})</insert>
+
+    <select id="getRankUsers" parameterType="int">
+                               SELECT * FROM User INNER JOIN userinformation
+                               on user.userInformationID=userinformation.uuid
+                               order by userinformation.totalSolveValue desc
+                               LIMIT 0, #{amount}
+    </select>
 </mapper>

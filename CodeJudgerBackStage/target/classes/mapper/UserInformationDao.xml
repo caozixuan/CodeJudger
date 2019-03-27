@@ -4,5 +4,19 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="ssm.dao.IUserInformationDao">
 
+    <select id="getUserInformationByUserID" resultType="UserInformation" parameterType="String">
+    SELECT UserInformation.* from UserInformation Inner Join User on userInformation.uuid = User.userInformationID
+    WHERE UserInformation.uuid= User.userInformationID
+    </select>
+
+    <update id="updateUserInformation" parameterType="UserInformation" >
+        UPDATE userinformation SET totalSolveValue = #{totalSolveValue}, totalSubmitCount = #{totalSubmitCount},
+                                   totalRightCount = #{totalRightCount}
+        WHERE uuid = #{uuid}
+    </update>
+
+    <insert id="createUserInformation" parameterType="UserInformation" >
+        INSERT INTO userinformation VALUES ( #{uuid}, #{totalSolveValue}, #{totalSubmitCount},#{totalRightCount})
+    </insert>
 
 </mapper>
