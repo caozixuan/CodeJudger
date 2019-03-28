@@ -10,6 +10,6 @@ import java.util.List;
 public interface IUserDao {
     User getUserByID(String uuid);
 
-    int createUser(User user);
+    void createUser(User user);
     List<User> getRankUsers(int amount);
 }
