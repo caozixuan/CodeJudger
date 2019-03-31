@@ -7,7 +7,6 @@ import ssm.model.Problem;
 import ssm.service.IProblemService;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -22,7 +21,7 @@ public class ProblemController {
         {
             System.out.println(problem.getProblemContent());
         }
-        return "problems";
+        return "problemDetail";
     }
 
     @RequestMapping("/{problemName}")

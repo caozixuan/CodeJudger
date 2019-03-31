@@ -39,7 +39,7 @@ public class UserController {
                 return "UserPage";
             }
         }
-        return "UserLogin";
+        return "problemDetail";
     }
 
     // Register

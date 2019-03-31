@@ -5,8 +5,8 @@
 <mapper namespace="ssm.dao.IUserInformationDao">
 
     <select id="getUserInformationByUserID" resultType="UserInformation" parameterType="String">
-    SELECT UserInformation.* from UserInformation Inner Join User on userInformation.uuid = User.userInformationID
-    WHERE UserInformation.uuid= User.userInformationID
+    SELECT userinformation.* from userinformation Inner Join user on userinformation.uuid = user.userInformationID
+    WHERE userinformation.uuid= user.userInformationID AND user.uuid=#{userID}
     </select>
 
     <update id="updateUserInformation" parameterType="UserInformation" >

@@ -4,7 +4,7 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="ssm.dao.IProblemDao">
 
-    <select id="getAllProblems" resultType="Problem">SELECT * from Problem</select>
-    <select id="getProblemByID" resultType="Problem" parameterType="String">SELECT * from Problem where uuid=#{uuid}</select>
+    <select id="getAllProblems" resultType="Problem">SELECT * from problem</select>
+    <select id="getProblemByID" resultType="Problem" parameterType="String">SELECT * from problem where uuid=#{uuid}</select>
 
 </mapper>
