@@ -6,6 +6,8 @@
 
     <select id="getUserByID" resultType="User" parameterType="String">SELECT * from user WHERE uuid=#{uuid}</select>
 
+    <select id="getUserByEmail" resultType="User" parameterType="String">SELECT * from user WHERE email=#{email}</select>
+
     <insert id="createUser" parameterType="User">INSERT INTO user values (#{uuid},#{nickName},#{email},#{password},1,#{userInformationID})</insert>
 
     <select id="getRankUsers" parameterType="int" resultType="User">

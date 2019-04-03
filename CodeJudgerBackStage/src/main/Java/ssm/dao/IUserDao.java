@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface IUserDao {
     User getUserByID(String uuid);
-
+    User getUserByEmail(String email);
     void createUser(User user);
     List<User> getRankUsers(int amount);
 }

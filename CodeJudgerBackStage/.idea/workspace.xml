@@ -7,48 +7,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab4f54a2-c994-42ba-bf5b-bb53c5465092" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/ssm/controller/ProblemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/ssm/controller/ProblemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Java/ssm/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/ssm/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Views/Register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Views/UserLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserLogin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Views/UserPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/problemDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/Views/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/mapper/ProblemDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/mapper/ProblemDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/mapper/StudentDao.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/mapper/SubmitDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/mapper/SubmitDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/ssm/dao/IUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/ssm/dao/IUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/ssm/model/UserInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/ssm/model/UserInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/ssm/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/ssm/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/ssm/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/ssm/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Java/ssm/test/UserServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Test/ServiceTest/UserServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserLogin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserLogin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/problemDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/problemDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/Views/UserPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/Views/UserPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/Views/problemDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/Views/problemDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/mapper/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/mapper/UserInformationDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/mapper/UserInformationDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/controller/StudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/IProblemDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/IProblemDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/IProblemTypeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/IProblemTypeDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/IStudentDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/ISubmitDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/ISubmitDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/controller/ProblemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/controller/ProblemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/IUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/IUserInformationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/dao/IUserInformationDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/service/IStudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/model/Student 2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/model/UserInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/model/UserInformation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/service/RankService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/service/RankService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/service/StudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/service/UserService 2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ProblemDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ProblemDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/StudentDao.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SubmitDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/SubmitDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ChatRobot/WEB-INF/classes/ssm/test/UserServiceTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserInformationDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserInformationDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ssm/controller/StudentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ssm/dao/IProblemDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/dao/IProblemDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ssm/dao/IProblemTypeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/dao/IProblemTypeDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ssm/dao/IStudentDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ssm/dao/ISubmitDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/dao/ISubmitDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ssm/controller/ProblemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/controller/ProblemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ssm/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ssm/dao/IUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/dao/IUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ssm/dao/IUserInformationDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/dao/IUserInformationDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ssm/service/IStudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ssm/model/UserInformation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/model/UserInformation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ssm/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ssm/service/RankService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/service/RankService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ssm/service/StudentService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ssm/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssm/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ssm/test/UserServiceTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,7 +66,36 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@codejueger" type="feb32156:DbDataSourceImpl" />
+        <item name="learn@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="StupidMySQL" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="StupidMySQL" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="StupidMySQL" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="codejudger: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="StupidMySQL" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="codejudger: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="problem: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="StupidMySQL" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="codejudger: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="user: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -90,32 +113,40 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="18" />
-          <entry key="jsp" value="6" />
-          <entry key="properties" value="1" />
-          <entry key="xml" value="3" />
+          <entry key="class" value="1" />
+          <entry key="java" value="53" />
+          <entry key="jsp" value="16" />
+          <entry key="problem" value="1" />
+          <entry key="properties" value="2" />
+          <entry key="user" value="2" />
+          <entry key="userinformation" value="1" />
+          <entry key="xml" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="18" />
-          <entry key="JSP" value="6" />
-          <entry key="Properties" value="1" />
-          <entry key="XML" value="3" />
+          <entry key="CLASS" value="1" />
+          <entry key="Database Element" value="4" />
+          <entry key="JAVA" value="53" />
+          <entry key="JSP" value="16" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="13" />
-          <entry key="jsp" value="30" />
+          <entry key="java" value="752" />
+          <entry key="jsp" value="364" />
           <entry key="properties" value="15" />
+          <entry key="xml" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13" />
-          <entry key="JSP" value="30" />
+          <entry key="JAVA" value="752" />
+          <entry key="JSP" value="364" />
           <entry key="Properties" value="15" />
+          <entry key="XML" value="36" />
         </counts>
       </usages-collector>
     </session>
@@ -123,81 +154,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/controller/ProblemController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/IUserService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+              <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserLogin.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserPage.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Register.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="36" column="7" lean-forward="true" selection-start-line="8" selection-end-line="36" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/IProblemService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProblemDao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/RankService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/problemDetail.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -205,11 +168,52 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="278">
+              <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#336#337#0" expanded="true" />
+                <element signature="e#385#386#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://df5c9fde-eaec-493f-a04b-0cdd989abbc6/schema/codejudger/table/user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserLogin.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -222,12 +226,16 @@
         <option value="Interface" />
         <option value="spring-beans.schema" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>conne</find>
+      <find>IUserSe</find>
+      <find>IUserServi</find>
+      <find>IProblemSe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -252,11 +260,9 @@
         <option value="$PROJECT_DIR$/src/main/Java/ssm/model/ProblemType.java" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/controller/RankController.java" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/dao/ISubmitDao.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/ssm/service/IUserService.java" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/service/IRankService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mybatis.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ProblemType.xml" />
-        <option value="$PROJECT_DIR$/src/main/Java/ssm/model/UserInformation.java" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/model/Submit.java" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/service/IProblemService.java" />
@@ -265,14 +271,20 @@
         <option value="$PROJECT_DIR$/src/main/Java/ssm/service/ProblemService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ProblemDao.xml" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/dao/IUserInformationDao.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/ssm/dao/IUserDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserInformationDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/dao/IProblemDao.java" />
         <option value="$PROJECT_DIR$/src/main/Test/ServiceTest/UserServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/Java/ssm/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/controller/ProblemController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/problemDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/Java/ssm/service/IUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/Java/ssm/dao/IUserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Register.jsp" />
+        <option value="$PROJECT_DIR$/src/main/Java/ssm/model/UserInformation.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/Java/ssm/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserLogin.jsp" />
         <option value="$PROJECT_DIR$/src/main/Java/ssm/controller/UserController.java" />
       </list>
@@ -365,6 +377,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="ssm" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CodeJudgerBackStage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodeJudgerBackStage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="ssm" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -390,6 +411,21 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CodeJudgerBackStage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodeJudgerBackStage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CodeJudgerBackStage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CodeJudgerBackStage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Test" type="462c0819:PsiDirectoryNode" />
+              <item name="daoTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CodeJudgerBackStage" type="b2602c69:ProjectViewProjectNode" />
@@ -426,7 +462,8 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553998608384" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554300474823" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -467,7 +504,7 @@
     </configuration>
     <configuration name="Tomcat 9.0.16" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.16" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="ssm:war exploded">
           <settings>
@@ -565,7 +602,7 @@
       <workItem from="1553685202692" duration="301000" />
       <workItem from="1553698405255" duration="1967000" />
       <workItem from="1553788048940" duration="1256000" />
-      <workItem from="1553916831878" duration="3379000" />
+      <workItem from="1553916831878" duration="19877000" />
     </task>
     <servers />
   </component>
@@ -575,7 +612,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55134000" />
+    <option name="totallyTimeSpent" value="71632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="969" extended-state="0" />
@@ -589,31 +626,32 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" weight="0.3295325" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.36488026" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.43443558" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32956153" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3295325" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="CheckStyle" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50061053" side_tool="true" weight="0.2668187" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.3295325" />
       <window_info anchor="bottom" id="Version Control" order="15" />
-      <window_info anchor="bottom" id="Messages" order="16" weight="0.81754386" />
+      <window_info anchor="bottom" id="Messages" order="16" weight="0.8164196" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24969475" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="JSF" order="6" />
-      <window_info anchor="right" id="Database" order="7" weight="0.32967034" />
+      <window_info anchor="right" id="JSF" order="6" weight="0.32967034" />
+      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.25702077" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="CDI" order="10" />
@@ -667,50 +705,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.5.RELEASE/spring-web-4.3.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2396">
-          <caret line="149" column="84" selection-start-line="149" selection-start-column="84" selection-end-line="149" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.1/mybatis-3.4.1.jar!/org/apache/ibatis/binding/MapperProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis-spring/1.3.1/mybatis-spring-1.3.1.jar!/org/mybatis/spring/SqlSessionTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="171" selection-start-line="171" selection-end-line="171" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.1/mybatis-3.4.1.jar!/org/apache/ibatis/session/defaults/DefaultSqlSessionFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/688b54e8-ce37-46e0-a899-59649e6b1095/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="91" selection-start-line="15" selection-start-column="91" selection-end-line="15" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/Commit.java" />
     <entry file="file://$PROJECT_DIR$/target/classes/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -730,67 +729,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentDao.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/Student.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/IUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/IStudentService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/StudentService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/controller/StudentController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/476a5a84-f79b-4803-9963-90fdafd5930b/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/ProblemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserInformationDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SubmitDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="134" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="134" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/Submit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -798,70 +740,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/UserInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/Problem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/ProblemType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Test/ServiceTest/UserServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/IUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="11" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/IStudentDao.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/IProblemTypeDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/IProblemService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/ISubmitDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProblemTypeDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="60">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -872,10 +755,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/IUserInformationDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/ProblemType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/RankService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/IProblemDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/IProblemTypeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/ISubmitDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/test/UserServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SubmitDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="134" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Test/ServiceTest/UserServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProblemTypeDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -889,17 +856,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/Problem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="56" column="25" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.5.RELEASE/spring-beans-4.3.5.RELEASE.jar!/org/springframework/beans/factory/parsing/Problem.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df5c9fde-eaec-493f-a04b-0cdd989abbc6/schema/codejudger/table/problem">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/IRankService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/IProblemDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -910,65 +898,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/RankService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/ProblemService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/controller/ProblemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="330">
+          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1276#1277#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/IUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/IProblemService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="135">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/controller/ProblemController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Test/daoTest/UserInformationDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserInformationDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/dao/IUserInformationDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/model/UserInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df5c9fde-eaec-493f-a04b-0cdd989abbc6/schema/codejudger/table/userinformation">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/service/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
+          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://df5c9fde-eaec-493f-a04b-0cdd989abbc6/schema/codejudger/table/user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/problemDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="184">
+          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Register.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="36" column="7" lean-forward="true" selection-start-line="8" selection-end-line="36" selection-end-column="7" />
+        <state relative-caret-position="156">
+          <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserLogin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="89">
+          <caret line="15" column="80" selection-start-line="15" selection-start-column="80" selection-end-line="15" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/UserPage.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Java/ssm/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="51" column="31" lean-forward="true" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+        <state relative-caret-position="216">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

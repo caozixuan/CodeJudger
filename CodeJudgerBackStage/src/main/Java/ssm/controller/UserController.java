@@ -6,14 +6,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ssm.model.User;
+import ssm.service.IUserService;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
-    private static List<User> userList;
+    @Resource
+    private IUserService userService;
 
+    private static List<User> userList;
     {
         userList = new ArrayList<User>();
     }
@@ -33,13 +37,12 @@ public class UserController {
     public String validateUser(
             @RequestParam("email")String email,
             @RequestParam("password")String password, Model model) {
-        for (User user: userList) {
-            if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
-                model.addAttribute("user", user);
-                return "UserPage";
-            }
+        if (userService.login(email, password)) {
+            return "UserPage";
         }
-        return "problemDetail";
+        else {
+            return "UserLogin";
+        }
     }
 
     // Register
@@ -59,7 +62,16 @@ public class UserController {
         user.setNickName(nickName);
         user.setEmail(email);
         user.setPassword(password);
-        userList.add(user);
-        return "UserLogin";
+        // Code: 0-Success 1-DuplicateEmail
+        int returnCode = userService.createUser(user);
+        if (returnCode == 0) {
+            userList.add(user);
+            return "UserLogin";
+        }
+        else if (returnCode == 1) {
+            System.out.println("Duplicate Email!");
+            return "Register";
+        }
+        return "Register";
     }
 }

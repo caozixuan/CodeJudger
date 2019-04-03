@@ -1,8 +1,10 @@
 package ssm.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import ssm.model.Problem;
 import ssm.service.IProblemService;
 
@@ -14,29 +16,27 @@ import java.util.List;
 public class ProblemController {
     @Resource
     private IProblemService problemService;
-    @RequestMapping("/")
-    public String problemList(){
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String problemList(ModelMap map){
         List<Problem> problems = problemService.getAllProblems();
-        for(Problem problem:problems)
-        {
-            System.out.println(problem.getProblemContent());
-        }
+        map.addAttribute("problems", problems);
         return "problemDetail";
     }
 
     @RequestMapping("/{problemName}")
     public String problemDetail(@PathVariable("problemName") String problemName){
-        return "problemDetail";
+        return "Register";
     }
 
     @RequestMapping("/evaluate/{problemName}")
     public String evaluateProblem(@PathVariable("problemName") String problemName){
-        return "problemDetail";
+        return "Register";
     }
 
     @RequestMapping("/execute/{problemName}")
     public String executeProblem(@PathVariable("problemName") String problemName, String example){
-        return "programDetail";
+        return "Register";
     }
 
 

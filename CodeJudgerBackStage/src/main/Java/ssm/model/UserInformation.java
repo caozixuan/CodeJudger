@@ -2,9 +2,9 @@ package ssm.model;
 
 public class UserInformation {
     String uuid;                    // 唯一标识
-    int totalSolveValue;            // 解决问题的总价值
-    int totalSubmitCount;           // 提交总数
-    int totalRightCount;            // 正确总数
+    int totalSolveValue = 0;            // 解决问题的总价值
+    int totalSubmitCount = 0;           // 提交总数
+    int totalRightCount = 0;            // 正确总数
 
     public UserInformation(){
 
