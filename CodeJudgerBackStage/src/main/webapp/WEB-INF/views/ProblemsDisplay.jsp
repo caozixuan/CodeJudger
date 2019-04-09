@@ -63,8 +63,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/favicon.ico" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
     <title>Homepage - tabler.github.io - a responsive, flat and full featured admin template</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -93,8 +93,8 @@
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
-                    <a class="header-brand" href="./index.html">
-                        <img src="${pageContext.request.contextPath}./demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">
+                    <a class="header-brand" href="./problem.html">
+                        <img src="${pageContext.request.contextPath}/demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">
                     </a>
                     <div class="d-flex order-lg-2 ml-auto">
                         <div class="nav-item d-none d-md-flex">
@@ -107,7 +107,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                 <a href="#" class="dropdown-item d-flex">
-                                    <span class="avatar mr-3 align-self-center" style="background-image: url(${pageContext.request.contextPath}/demo/faces/male/41.jpg)"></span>
+                                    <span class="avatar mr-3 align-self-center" style="background-image: url(${pageContext.request.contextPath}demo/faces/male/41.jpg)"></span>
                                     <div>
                                         <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
                                         <div class="small text-muted">10 minutes ago</div>
@@ -131,37 +131,45 @@
                                 <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
                             </div>
                         </div>
-                        <div class="dropdown">
-                            <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-                                <span class="avatar" style="background-image: url(${pageContext.request.contextPath}/demo/faces/female/25.jpg)"></span>
-                                <span class="ml-2 d-none d-lg-block">
-                      <span class="text-default">Jane Pearson</span>
-                      <small class="text-muted d-block mt-1">Administrator</small>
-                    </span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                <a class="dropdown-item" href="#">
-                                    <i class="dropdown-icon fe fe-user"></i> Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="dropdown-icon fe fe-settings"></i> Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <span class="float-right"><span class="badge badge-primary">6</span></span>
-                                    <i class="dropdown-icon fe fe-mail"></i> Inbox
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="dropdown-icon fe fe-send"></i> Message
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <i class="dropdown-icon fe fe-help-circle"></i> Need help?
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="dropdown-icon fe fe-log-out"></i> Sign out
-                                </a>
-                            </div>
+                        <%if (session.getAttribute("uuid")==null){%>
+                        <div>
+                            <a href="${pageContext.request.contextPath}/user/register">SIGN UP!</a>
+                            <br>
+                            <a href="${pageContext.request.contextPath}/user/login">SIGN IN!</a>
                         </div>
+                        <%}else {%>
+                            <div class="dropdown">
+                                <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                                    <span class="avatar" style="background-image: url(${pageContext.request.contextPath}/demo/faces/female/25.jpg)"></span>
+                                    <span class="ml-2 d-none d-lg-block">
+                                            <span class="text-default"><%= session.getAttribute("nickName")%></span>
+                                    <small class="text-muted d-block mt-1">Administrator</small>
+                                     </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="dropdown-icon fe fe-user"></i> Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="dropdown-icon fe fe-settings"></i> Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <span class="float-right"><span class="badge badge-primary">6</span></span>
+                                        <i class="dropdown-icon fe fe-mail"></i> Inbox
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="dropdown-icon fe fe-send"></i> Message
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="dropdown-icon fe fe-help-circle"></i> Need help?
+                                    </a>
+                                    <a class="dropdown-item" href="${pageContext.request.contextPath}/user/logout">
+                                        <i class="dropdown-icon fe fe-log-out"></i> Sign out
+                                    </a>
+                                </div>
+                            </div>
+                        <%}%>
                     </div>
                     <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
                         <span class="header-toggler-icon"></span>
