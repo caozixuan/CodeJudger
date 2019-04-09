@@ -41,12 +41,12 @@ public class UserService implements IUserService{
         return iUserDao.getRankUsers(amount);
     }
 
-    public boolean login(String email,String password) {
+    public User login(String email,String password) {
         User user = iUserDao.getUserByEmail(email);
         if (user != null) {
             if (user.getEmail().equals(email) && user.getPassword().equals(password))
-                return true;
+                return user;
         }
-        return false;
+        return null;
     }
 }

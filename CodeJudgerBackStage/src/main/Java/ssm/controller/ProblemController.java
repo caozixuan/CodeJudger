@@ -21,7 +21,7 @@ public class ProblemController {
     public String problemList(ModelMap map){
         List<Problem> problems = problemService.getAllProblems();
         map.addAttribute("problems", problems);
-        return "problemDetail";
+        return "ProblemsDisplay";
     }
 
     @RequestMapping("/{problemName}")

@@ -14,11 +14,18 @@
     </head>
 
     <body>
-        <div style="position: absolute; left: 200px; top: 100px;">
-            <a href="${pageContext.request.contextPath}/user/register">SIGN UP!</a>
-            <br /><br />
-            <a href="${pageContext.request.contextPath}/user/login">SIGN IN!</a>
-        </div>
+        <%if (session.getAttribute("uuid")==null){%>
+            <div>
+                <a href="${pageContext.request.contextPath}/user/register">SIGN UP!</a>
+                <br><br>
+                <a href="${pageContext.request.contextPath}/user/login">SIGN IN!</a>
+            </div>
+        <%}else {%>
+            Welcome, <%= session.getAttribute("nickName")%>!
+            <br>
+            <a href="${pageContext.request.contextPath}/user/logout">LOG OUT</a>
+        <%}%>
+
         <table border="1">
             <tr>
                 <td>ID</td>

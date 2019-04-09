@@ -9,6 +9,7 @@ import ssm.model.User;
 import ssm.service.IUserService;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 
 @Controller
@@ -16,11 +17,6 @@ import java.util.*;
 public class UserController {
     @Resource
     private IUserService userService;
-
-    private static List<User> userList;
-    {
-        userList = new ArrayList<User>();
-    }
 
 
     @RequestMapping("/{uuid}")
@@ -33,12 +29,22 @@ public class UserController {
         return "UserLogin";
     }
 
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        request.getSession().invalidate();
+        return "redirect:/problems/";
+    }
+
     @RequestMapping("/validateUser")
     public String validateUser(
+            HttpServletRequest request,
             @RequestParam("email")String email,
             @RequestParam("password")String password, Model model) {
-        if (userService.login(email, password)) {
-            return "UserPage";
+        User user = userService.login(email, password);
+        if (user != null) {
+            request.getSession().setAttribute("uuid", user.getUuid());
+            request.getSession().setAttribute("nickName", user.getNickName());
+            return "redirect:/problems/";
         }
         else {
             return "UserLogin";
@@ -65,7 +71,6 @@ public class UserController {
         // Code: 0-Success 1-DuplicateEmail
         int returnCode = userService.createUser(user);
         if (returnCode == 0) {
-            userList.add(user);
             return "UserLogin";
         }
         else if (returnCode == 1) {

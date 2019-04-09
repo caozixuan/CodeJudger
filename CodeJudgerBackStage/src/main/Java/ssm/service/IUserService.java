@@ -10,5 +10,5 @@ public interface IUserService {
     public User selectUser(String uuid);
     int createUser(User user);
     List<User> getRankUsers(int amount);
-    public boolean login(String username,String password);
+    public User login(String username,String password);
 }
