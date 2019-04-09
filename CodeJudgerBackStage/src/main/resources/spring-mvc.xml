@@ -10,6 +10,12 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
+
+    <mvc:resources location="/assets/" mapping="/assets/**" />
+    <mvc:resources location="/demo/" mapping="/demo/**" />
+    <mvc:resources location="/docs/" mapping="/docs/**" />
+    <mvc:resources location="/codemirror/" mapping="/codemirror/**" />
+
     <!-- 扫描web相关的bean -->
     <context:component-scan base-package="ssm.controller"/>
 
