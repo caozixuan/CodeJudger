@@ -72,7 +72,7 @@
     <script src="${pageContext.request.contextPath}/assets/js/require.min.js"></script>
     <script>
         requirejs.config({
-            baseUrl: '.'
+            baseUrl: '${pageContext.request.contextPath}'
         });
     </script>
     <!-- Dashboard Core -->
@@ -264,83 +264,38 @@
                                         <th>Solution</th>
                                         <th>Acceptance</th>
                                         <th>Difficulty</th>
-                                        <th>Frequency</th>
+                                        <th>Value</th>
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td><span class="text-muted">0001</span></td>
-                                        <td><a href="#" class="text-inherit">HelloWorld1</a></td>
-                                        <td>
-                                            <a class="icon" href="javascript:void(0)">
-                                                <i class="fe fe-edit"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            90%
-                                        </td>
-                                        <td>
-                                            <span class="tag tag-green">Easy</span>
-                                        </td>
-                                        <td>
-                                            1000
-                                        </td>
-                                        <td class="text-right">
-                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="text-muted">0002</span></td>
-                                        <td><a href="#" class="text-inherit">HelloWorld2</a></td>
-                                        <td>
-                                            <a class="icon" href="javascript:void(0)">
-                                                <i class="fe fe-edit"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            80%
-                                        </td>
-                                        <td>
-                                            <span class="tag tag-yellow">Medium</span>
-                                        </td>
-                                        <td>
-                                            1000
-                                        </td>
-                                        <td class="text-right">
-                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="text-muted">0003</span></td>
-                                        <td><a href="#" class="text-inherit">HelloWorld3</a></td>
-                                        <td>
-                                            <a class="icon" href="javascript:void(0)">
-                                                <i class="fe fe-edit"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            50%
-                                        </td>
-                                        <td>
-                                            <span class="tag tag-red">Hard</span>
-                                        </td>
-                                        <td>
-                                            1000
-                                        </td>
-                                        <td class="text-right">
-                                            <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                        <% for (ssm.model.Problem pro: (List<ssm.model.Problem>)request.getAttribute("problems"))
+                                        {%>
+                                        <tr>
+                                            <td><span class="text-muted"><%=pro.getUuid()%></span></td>
+                                            <td><a href="#" class="text-inherit">HelloWorld</a></td>
+                                            <td>
+                                                <a class="icon" href="javascript:void(0)">
+                                                    <i class="fe fe-edit"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <%=pro.getTotalRightCount()%> / <%=pro.getTotalSubmitCount()%>
+                                            </td>
+                                            <td>
+                                                <span class="tag tag-green"><%=pro.getProblemDifficulty()%></span>
+                                            </td>
+                                            <td>
+                                                <%=pro.getProblemValue()%>
+                                            </td>
+                                            <td class="text-right">
+                                                <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <%}%>
                                     </tbody>
                                 </table>
                             </div>
