@@ -123,6 +123,13 @@
       <version>${spring.version}</version>
     </dependency>
 
+    <!--JSTL 解析JSP标签-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>
