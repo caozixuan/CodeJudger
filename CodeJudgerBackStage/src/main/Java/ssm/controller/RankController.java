@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/rank")
 public class RankController {
     @RequestMapping("/")
+
     public String rank(){
-        return "rank";
+
+        return "Rank";
     }
 }

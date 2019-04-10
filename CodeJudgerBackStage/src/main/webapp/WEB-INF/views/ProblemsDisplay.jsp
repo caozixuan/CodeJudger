@@ -66,7 +66,7 @@
     <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/favicon.ico" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
-    <title>Homepage - tabler.github.io - a responsive, flat and full featured admin template</title>
+    <title>CodeJudge - an online platform for programming and automatic judging</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="${pageContext.request.contextPath}/assets/js/require.min.js"></script>
@@ -88,12 +88,96 @@
     <script src="${pageContext.request.contextPath}/assets/plugins/input-mask/plugin.js"></script>
 </head>
 <body class="">
+<%--Login Module--%>
+<div class="container">
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-backdrop">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col col-login mx-auto">
+                            <form class="card" method="post" action="${pageContext.request.contextPath}/user/validateUser">
+                                <div class="card-body p-6">
+                                    <div class="card-title">Login to your account<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email address</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            Password
+                                            <a href="./forgot-password.html" class="float-right small">I forgot password</a>
+                                        </label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" />
+                                            <span class="custom-control-label">Remember me</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-footer">
+                                        <button id="submit" type="submit" class="btn btn-primary btn-block">LOG IN</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%--Register Module--%>
+<div class="container">
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myRegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-backdrop">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col col-login mx-auto">
+                            <form class="card" action="" method="post">
+                                <div class="card-body p-6">
+                                    <div class="card-title">Login to your account<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            Password
+                                            <a href="./forgot-password.html" class="float-right small">I forgot password</a>
+                                        </label>
+                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" />
+                                            <span class="custom-control-label">Remember me</span>
+                                        </label>
+                                    </div>
+                                    <div class="form-footer">
+                                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="page">
     <div class="page-main">
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
-                    <a class="header-brand" href="./problem.html">
+                    <a class="header-brand" href="${pageContext.request.contextPath}/problems/">
                         <img src="${pageContext.request.contextPath}/demo/brand/tabler.svg" class="header-brand-img" alt="tabler logo">
                     </a>
                     <div class="d-flex order-lg-2 ml-auto">
@@ -133,9 +217,12 @@
                         </div>
                         <%if (session.getAttribute("uuid")==null){%>
                         <div>
-                            <a href="${pageContext.request.contextPath}/user/register">SIGN UP!</a>
-                            <br>
-                            <a href="${pageContext.request.contextPath}/user/login">SIGN IN!</a>
+                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myLoginModal">
+                                SIGN IN!
+                            </button>
+                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myRegisterModal">
+                                SIGN UP!
+                            </button>
                         </div>
                         <%}else {%>
                             <div class="dropdown">
@@ -191,12 +278,12 @@
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link active"><i class="fe fe-home"></i> Home</a>
+                                <a href="./index.html" class="nav-link active"><i class="fe fe-home"></i> Problems </a>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Interface</a>
+                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Rank </a>
                                 <div class="dropdown-menu dropdown-menu-arrow">
-                                    <a href="./cards.html" class="dropdown-item ">Cards design</a>
+                                    <a href="${pageContext.request.contextPath}/rank/" class="dropdown-item "> Rank of all users</a>
                                     <a href="./charts.html" class="dropdown-item ">Charts</a>
                                     <a href="./pricing-cards.html" class="dropdown-item ">Pricing cards</a>
                                 </div>
