@@ -3,6 +3,8 @@ package ssm.model;
 public class Problem {
     String uuid;                     // 唯一标识
 
+    String title;                   // 问题的标题
+
     String problemTypeID;           // 对应问题的唯一标识
 
     long timeLimit;                 // 时间限制
@@ -20,6 +22,10 @@ public class Problem {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setProblemTypeID(String problemTypeID) {
@@ -56,6 +62,10 @@ public class Problem {
 
     public String getUuid() {
         return uuid;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public String getProblemTypeID() {

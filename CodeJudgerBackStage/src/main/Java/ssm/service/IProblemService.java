@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface IProblemService {
     public List<Problem> getAllProblems();
+
+    public Problem getProblemByUuid(String uuid);
 }

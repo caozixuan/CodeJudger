@@ -24,9 +24,10 @@ public class ProblemController {
         return "ProblemsDisplay";
     }
 
-    @RequestMapping("/{problemName}")
-    public String problemDetail(@PathVariable("problemName") String problemName){
-        return "Register";
+    @RequestMapping("/{problemUuid}")
+    public String problemDetail(@PathVariable("problemUuid") String problemUuid, ModelMap map){
+        map.addAttribute("problem", problemService.getProblemByUuid(problemUuid));
+        return "ProblemDetails";
     }
 
     @RequestMapping("/evaluate/{problemName}")

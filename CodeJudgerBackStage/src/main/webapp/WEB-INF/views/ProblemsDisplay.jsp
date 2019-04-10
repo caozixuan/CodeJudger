@@ -273,7 +273,7 @@
                                         {%>
                                         <tr>
                                             <td><span class="text-muted"><%=pro.getUuid()%></span></td>
-                                            <td><a href="#" class="text-inherit">HelloWorld</a></td>
+                                            <td><a href="#" class="text-inherit"><%=pro.getTitle()%></a></td>
                                             <td>
                                                 <a class="icon" href="javascript:void(0)">
                                                     <i class="fe fe-edit"></i>
@@ -289,7 +289,7 @@
                                                 <%=pro.getProblemValue()%>
                                             </td>
                                             <td class="text-right">
-                                                <a href="javascript:void(0)" class="btn btn-secondary btn-sm">Manage</a>
+                                                <a href="${pageContext.request.contextPath}/problems/<%=pro.getUuid()%>" class="btn btn-secondary btn-sm">SOLVE</a>
                                                 <div class="dropdown">
                                                     <button class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown">Actions</button>
                                                 </div>

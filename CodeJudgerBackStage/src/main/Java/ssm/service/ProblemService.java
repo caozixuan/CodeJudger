@@ -16,4 +16,9 @@ public class ProblemService implements IProblemService{
         List<Problem> problems = this.problemDao.getAllProblems();
         return problems;
     }
+
+    public Problem getProblemByUuid(String uuid) {
+        Problem problem = this.problemDao.getProblemByID(uuid);
+        return problem;
+    }
 }
