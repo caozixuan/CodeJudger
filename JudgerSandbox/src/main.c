@@ -1,5 +1,10 @@
 #include "argtable3.h"
 #include "run.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <unistd.h>
 
 #define PROM_NAME "judgerSandbox.so"
 #define VERSION 0x000100 // (ver >> 16) & 0xff, (ver >> 8) & 0xff, ver & 0xff  -> real version
@@ -7,6 +12,8 @@
 
 #define INT_PLACE_HOLDER "<n>"
 #define STR_PLACE_HOLDER "<str>"
+
+#define BUFFER_SIZE 500
 
 /* global arg_xxx structs */
 struct arg_lit *verb, *help, *version;
@@ -192,7 +199,7 @@ int main(int argc, char *argv[]){
            "    \"exit_code\": %d,\n"
            "    \"error\": %d,\n"
            "    \"result\": %d\n"
-           "}",
+           "}\n",
            _result.cpu_time,
            _result.real_time,
            _result.memory,
@@ -201,6 +208,40 @@ int main(int argc, char *argv[]){
            _result.error,
            _result.result);
 
+    static char buffer[500];
+    int count = snprintf(buffer, BUFFER_SIZE,
+                       "{\n"
+                       "    \"cpu_time\": %d,\n"
+                       "    \"real_time\": %d,\n"
+                       "    \"memory\": %ld,\n"
+                       "    \"signal\": %d,\n"
+                       "    \"exit_code\": %d,\n"
+                       "    \"error\": %d,\n"
+                       "    \"result\": %d\n"
+                       "}\n",
+                       _result.cpu_time,
+                       _result.real_time,
+                       _result.memory,
+                       _result.signal,
+                       _result.exitcode,
+                       _result.error,
+                       _result.result );
+
+
+    // write result to json file
+    int fd;
+
+    if ((fd = open("result.json", O_CREAT|O_WRONLY|O_TRUNC, S_IRWXU|S_ISUID|S_ISGID)) < 0) {
+        fprintf(stderr, "open error\n");
+        exitcode = 1;
+        goto exit;
+    }
+
+    if (write(fd, buffer, (size_t) count) < 0) {
+            fprintf(stderr, "write error\n");
+            exitcode = 1;
+            goto exit; 
+        }
 
     exit:
     /* deallocate each non-null entry in argtable[] */

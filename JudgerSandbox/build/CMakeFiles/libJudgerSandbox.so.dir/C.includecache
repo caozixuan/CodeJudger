@@ -245,6 +245,16 @@ argtable3.h
 /src/src/argtable3.h
 run.h
 /src/src/run.h
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+stdio.h
+-
+unistd.h
+-
 
 /src/src/run.c
 run.h
