@@ -1,13 +1,13 @@
-<%@ page import="ssm.model.Problem" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: rickyzhang
-  Date: 2019/4/7
-  Time: 11:10 AM
+  Date: 2019/4/10
+  Time: 9:51 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
-<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -24,86 +24,14 @@
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
     <title>Homepage - tabler.github.io - a responsive, flat and full featured admin template</title>
-    <!-- Settings for CodeMirror-->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/doc/docs.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/lib/codemirror.css">
-    <script src="${pageContext.request.contextPath}/codemirror/lib/codemirror.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/mode/javascript/javascript.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/addon/selection/active-line.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/addon/edit/matchbrackets.js"></script>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/addon/hint/show-hint.css">
-    <script src="${pageContext.request.contextPath}/codemirror/addon/hint/show-hint.js"></script>
-    <!--add code mode for CodeMirror-->
-    <script src="${pageContext.request.contextPath}/codemirror/mode/clike/clike.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/mode/python/python.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/mode/javascript/javascript.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/mode/ruby/ruby.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/mode/swift/swift.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/mode/go/go.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/mode/rust/rust.js"></script>
-    <script src="${pageContext.request.contextPath}/codemirror/mode/php/php.js"></script>
-
-    <!--add theme css for CodeMirror-->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/3024-day.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/3024-night.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/abcdef.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/ambiance.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/base16-dark.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/bespin.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/base16-light.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/blackboard.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/cobalt.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/colorforth.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/dracula.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/duotone-dark.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/duotone-light.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/eclipse.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/elegant.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/erlang-dark.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/gruvbox-dark.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/hopscotch.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/icecoder.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/isotope.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/lesser-dark.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/liquibyte.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/lucario.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/material.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/mbo.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/mdn-like.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/midnight.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/monokai.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/neat.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/neo.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/night.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/nord.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/oceanic-next.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/panda-syntax.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/paraiso-dark.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/paraiso-light.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/pastel-on-dark.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/railscasts.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/rubyblue.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/seti.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/shadowfox.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/solarized.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/the-matrix.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/tomorrow-night-bright.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/tomorrow-night-eighties.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/ttcn.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/twilight.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/vibrant-ink.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/xq-dark.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/xq-light.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/yeti.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/idea.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/darcula.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/yonce.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/zenburn.css">
-
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <script src="${pageContext.request.contextPath}/assets/js/require.min.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: '${pageContext.request.contextPath}'
+        });
+    </script>
     <!-- Dashboard Core -->
     <link href="${pageContext.request.contextPath}/assets/css/dashboard.css" rel="stylesheet" />
     <script src="${pageContext.request.contextPath}/assets/js/dashboard.js"></script>
@@ -116,10 +44,6 @@
     <!-- Input Mask Plugin -->
     <script src="${pageContext.request.contextPath}/assets/plugins/input-mask/plugin.js"></script>
 </head>
-<!--<style>
-    .CodeMirror {border: 1px solid black; font-size:13px}
-</style>-->
-<%Problem pro = (Problem)request.getAttribute("problem");%>
 <body class="">
 <%--Login Module--%>
 <div class="container">
@@ -366,209 +290,181 @@
             <div class="container">
                 <div class="page-header">
                     <h1 class="page-title">
-                        <%=pro.getTitle()%>
+                        Ranking
                     </h1>
                 </div>
                 <div class="row row-cards">
-                    <div class="col-lg-6 ml-auto">
-                        <p>Select a theme: <select onchange="selectTheme()" id="selectTheme">
-                            <option selected>3024-day</option>
-                            <option>3024-night</option>
-                            <option>abcdef</option>
-                            <option>ambiance</option>
-                            <option>base16-dark</option>
-                            <option>base16-light</option>
-                            <option>bespin</option>
-                            <option>blackboard</option>
-                            <option>cobalt</option>
-                            <option>colorforth</option>
-                            <option>darcula</option>
-                            <option>dracula</option>
-                            <option>duotone-dark</option>
-                            <option>duotone-light</option>
-                            <option>eclipse</option>
-                            <option>elegant</option>
-                            <option>erlang-dark</option>
-                            <option>gruvbox-dark</option>
-                            <option>hopscotch</option>
-                            <option>icecoder</option>
-                            <option>idea</option>
-                            <option>isotope</option>
-                            <option>lesser-dark</option>
-                            <option>liquibyte</option>
-                            <option>lucario</option>
-                            <option>material</option>
-                            <option>mbo</option>
-                            <option>mdn-like</option>
-                            <option>midnight</option>
-                            <option>monokai</option>
-                            <option>neat</option>
-                            <option>neo</option>
-                            <option>night</option>
-                            <option>nord</option>
-                            <option>oceanic-next</option>
-                            <option>panda-syntax</option>
-                            <option>paraiso-dark</option>
-                            <option>paraiso-light</option>
-                            <option>pastel-on-dark</option>
-                            <option>railscasts</option>
-                            <option>rubyblue</option>
-                            <option>seti</option>
-                            <option>shadowfox</option>
-                            <option>solarized dark</option>
-                            <option>solarized light</option>
-                            <option>the-matrix</option>
-                            <option>tomorrow-night-bright</option>
-                            <option>tomorrow-night-eighties</option>
-                            <option>ttcn</option>
-                            <option>twilight</option>
-                            <option>vibrant-ink</option>
-                            <option>xq-dark</option>
-                            <option>xq-light</option>
-                            <option>yeti</option>
-                            <option>yonce</option>
-                            <option>zenburn</option>
-                        </select>
-                        </p>
-
-                        <p>Select a language:<select onchange="selectLanguage()" id="selectLanguage">
-                            <option selected>C++</option>
-                            <option>Java</option>
-                            <option>Python</option>
-                            <option>Python3</option>
-                            <option>C</option>
-                            <option>C#</option>
-                            <option>JavaScript</option>
-                            <option>Ruby</option>
-                            <option>Swift</option>
-                            <option>Go</option>
-                            <option>Scala</option>
-                            <option>Kotlin</option>
-                            <option>Rust</option>
-                            <option>PHP</option>
-                        </select>
-                        </p>
-                        <form><textarea id="code" name="code">
-function findSequence(goal) {
-  function find(start, history) {
-    if (start == goal)
-      return history;
-    else if (start > goal)
-      return null;
-    else
-      return find(start + 5, "(" + history + " + 5)") ||
-             find(start * 3, "(" + history + " * 3)");
-  }
-  return find(1, "1");
-}</textarea></form>
-
-                        <script>
-                            var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-                                indentUnit: 4,
-                                lineNumbers: true,
-                                lineWrapping: true,
-                                styleActiveLine: true,
-                                matchBrackets: true,
-                                foldGutter: true,
-                                gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
-                            });
-
-
-                            var inputTheme = document.getElementById("selectTheme");
-                            var inputLanguage = document.getElementById("selectLanguage");
-                            function selectTheme() {
-                                var theme = inputTheme.options[inputTheme.selectedIndex].textContent;
-                                editor.setOption("theme", theme);
-                                // location.hash = "#" + theme;
-                            }
-                            function selectLanguage() {
-                                var language = inputLanguage.options[inputLanguage.selectedIndex].textContent;
-                                switch(language){
-                                    case "C++":
-                                        editor.setOption("mode", "text/x-c++src");
-                                        break;
-                                    case "Java":
-                                        editor.setOption("mode", "text/x-java");
-                                        break;
-                                    case "Python":
-                                        editor.setOption("mode", {name: "python",
-                                            version: 2,
-                                            singleLineStringErrors: false});
-                                        break;
-                                    case "Python3":
-                                        editor.setOption("mode", {name: "python",
-                                            version: 3,
-                                            singleLineStringErrors: false});
-                                        break;
-                                    case "C":
-                                        editor.setOption("mode", "text/x-csrc");
-                                        break;
-                                    case "C#":
-                                        editor.setOption("mode", "text/x-csharp");
-                                        break;
-                                    case "JavaScript":
-                                        editor.setOption("mode", "text/javascript");
-                                        break;
-                                    case "Ruby":
-                                        editor.setOption("mode", "text/x-ruby");
-                                        break;
-                                    case "Swift":
-                                        editor.setOption("mode", "text/x-swift");
-                                        break;
-                                    case "Go":
-                                        editor.setOption("mode", "text/x-go");
-                                        break;
-                                    case "Scala":
-                                        editor.setOption("mode", "text/x-scala");
-                                        break;
-                                    case "Kotlin":
-                                        editor.setOption("mode", "text/x-kotlin");
-                                        break;
-                                    case "Rust":
-                                        editor.setOption("mode", "rust");
-                                        break;
-                                    case "PHP":
-                                        editor.setOption("mode", "text/x-php");
-                                        break;
-                                    default:
-                                        break;
-                                }
-                            }
-
-                            // var choice = (location.hash && location.hash.slice(1)) ||
-                            //     (document.location.search &&
-                            //         decodeURIComponent(document.location.search.slice(1)));
-                            // if (choice) {
-                            //     inputTheme.value = choice;
-                            //     editor.setOption("theme", choice);
-                            // }
-                            // CodeMirror.on(window, "hashchange", function() {
-                            //     var theme = location.hash.slice(1);
-                            //     if (theme) { inputTheme.value = theme; selectTheme(); }
-                            // });
-
-                            editor.setSize('100%', '100%');
-
-                            var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
-                            CodeMirror.keyMap.default[(mac ? "Cmd" : "Ctrl") + "-Space"] = "autocomplete";
-                        </script>
-                    </div>
-
-                    <div class="col-lg-6 order-lg-first">
+                    <div class="col-12">
                         <div class="card">
-                            <div class="card-body">
-                                <h2 class="mt-0 mb-4"><%=pro.getProblemContent()%></h2>
-                                <p>Given a 2D array <code class="highlighter-rote">A</code>, each cell is 0 (representing sea) or 1 (representing land)</p>
-                                <p>A move consists of walking from one land square 4-directionally to another land square, or off the boundary of the grid.</p>
-                                <p>Return the number of land squares in the grid for which we <strong>cannot</strong> walk off the boundary of the grid in any number of moves.</p>
-                                <h2>Example1:</h2>
-                                <div class="alert alert-secondary" role="alert">
-                                    <p><strong>Input:</strong> [[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]</p>
-                                    <p><strong>Output:</strong> 3</p>
-                                    <p><strong>Explanation:</strong><br>
-                                        There are three 1s that are enclosed by 0s, and one 1 that isn't enclosed because its on the boundary.</p>
-                                </div>
-                                <h5>Time Limit: <%=pro.getTimeLimit()%> &nbsp;&nbsp;&nbsp;&nbsp; Memory Limit: <%=pro.getMemoryLimit()%></h5>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-outline table-vcenter text-nowrap card-table">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center w-1"><i class="icon-people"></i></th>
+                                        <th>User</th>
+                                        <th>Language</th>
+                                        <th class="text-center">Score</th>
+                                        <th>Activity</th>
+                                        <th class="text-center">Satisfaction</th>
+                                        <th class="text-center"><i class="icon-settings"></i></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="avatar d-block" style="background-image: url(${pageContext.request.contextPath}/demo/faces/female/26.jpg)">
+                                                <span class="avatar-status bg-green"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Elizabeth Martin</div>
+                                            <div class="small text-muted">
+                                                Registered: Mar 9, 2018
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <strong>42%</strong>
+                                                </div>
+                                                <div class="float-right">
+                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                                </div>
+                                            </div>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar bg-yellow" role="progressbar" style="width: 42%"
+                                                     aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            50
+                                        </td>
+                                        <td>
+                                            <div class="small text-muted">Last login</div>
+                                            <div>4 minutes ago</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.42" data-thickness="3" data-color="blue">
+                                                <div class="chart-circle-value">42%</div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="item-action dropdown">
+                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="avatar d-block" style="background-image: url(${pageContext.request.contextPath}/demo/faces/female/17.jpg)">
+                                                <span class="avatar-status bg-green"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Michelle Schultz</div>
+                                            <div class="small text-muted">
+                                                Registered: Feb 21, 2018
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <strong>0%</strong>
+                                                </div>
+                                                <div class="float-right">
+                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                                </div>
+                                            </div>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar bg-red" role="progressbar" style="width: 0%"
+                                                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            0
+                                        </td>
+                                        <td>
+                                            <div class="small text-muted">Last login</div>
+                                            <div>5 minutes ago</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.0" data-thickness="3" data-color="blue">
+                                                <div class="chart-circle-value">0%</div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="item-action dropdown">
+                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <div class="avatar d-block" style="background-image: url(${pageContext.request.contextPath}/demo/faces/female/21.jpg)">
+                                                <span class="avatar-status bg-green"></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>Crystal Austin</div>
+                                            <div class="small text-muted">
+                                                Registered: Mar 28, 2018
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="clearfix">
+                                                <div class="float-left">
+                                                    <strong>96%</strong>
+                                                </div>
+                                                <div class="float-right">
+                                                    <small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                                </div>
+                                            </div>
+                                            <div class="progress progress-xs">
+                                                <div class="progress-bar bg-green" role="progressbar" style="width: 96%"
+                                                     aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            100
+                                        </td>
+                                        <td>
+                                            <div class="small text-muted">Last login</div>
+                                            <div>a minute ago</div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.96" data-thickness="3" data-color="blue">
+                                                <div class="chart-circle-value">96%</div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="item-action dropdown">
+                                                <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i class="fe fe-more-vertical"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-tag"></i> Action </a>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-edit-2"></i> Another action </a>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-message-square"></i> Something else here</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fe fe-link"></i> Separated link</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

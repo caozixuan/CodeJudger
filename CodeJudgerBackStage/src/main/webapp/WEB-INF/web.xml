@@ -49,6 +49,7 @@
     <url-pattern>*.jpg</url-pattern>
   </servlet-mapping>
 
+
   <servlet-mapping>
     <servlet-name>SpringMVC</servlet-name>
     <!-- 匹配所有请求，此处也可以配置成 *.do 形式 -->
