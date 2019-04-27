@@ -14,8 +14,8 @@ public class EvaluationTool{
     private Compiler compiler = new Compiler();
 
     private Judger judger = new Judger();
-
-    public boolean evaluate (Submit submit)throws Exception
+/*
+   public boolean evaluate (Submit submit)throws Exception
     {
         String problemID = submit.getProblemID();
         Problem problem = iProblemDao.getProblemByID(problemID);
@@ -27,4 +27,6 @@ public class EvaluationTool{
             return false;
         return true;
     }
+ */
+
 }
