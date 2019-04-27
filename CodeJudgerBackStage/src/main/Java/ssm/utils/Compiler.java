@@ -105,9 +105,9 @@ public class Compiler {
         return null;
     }
 
-    public  static boolean judge(String code, String stdOut,String language, String in, int maxTime, int memoryLimit) throws Exception
+    public  static boolean judge(String code, String stdOut,String language, String in, int timeLimit, int memoryLimit) throws Exception
     {
-        String out = exec(code,language,in,maxTime, memoryLimit);
+        String out = exec(code,language,in,timeLimit, memoryLimit);
         stdOut = "/CSource/"+stdOut;
         //String stdOut = "/CSource/normal.out";
         File file = new File(out);//定义一个file对象，用来初始化FileReader
