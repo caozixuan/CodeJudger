@@ -77,7 +77,7 @@ public class Compiler {
         return outputName;
     }
 
-    public  static String exec(String code, String language,String in) throws Exception
+    public  static String exec(String code, String language,String in, int timeLimit, int memoryLimit) throws Exception
     {
         if(language.equals("C"))
         {
@@ -86,7 +86,7 @@ public class Compiler {
             String out = outputName+".output";
             //String in = "/CSource/normal.in";
             String error = outputName+".err";
-            String command = "/JudgerSandbox/output/libJudgerSandbox.so --exe_path="+exe+" --input_path="+in+" --output_path="+out+" --error_path="+error;
+            String command = "/JudgerSandbox/output/libJudgerSandbox.so --exe_path="+exe+" --input_path="+in+" --output_path="+out+" --error_path="+error+" --max_real_time="+timeLimit+" --max_memory="+memoryLimit;
             Runtime.getRuntime().exec(command).waitFor();
             return out;
         }
@@ -98,16 +98,16 @@ public class Compiler {
             String error = outputName+".err";
             String command = "/JudgerSandbox/output/libJudgerSandbox.so --exe_path=/opt/jdk/bin/java"+" --output_path="+out+" --error_path="+error+
                     "--args=\"-cp\" --args=\""+outputName+"\" --args=\"-xx:MaxRAM=2048K\" --args=\"-Djava.security.manager\"" +
-                    " --args=\"-Dfile-encoding=UTF-8\" --args=\"-Djava.awt.headless=True\" --args=\""+outputName.substring(outputName.indexOf("/",2)+1)+"\"";
+                    " --args=\"-Dfile-encoding=UTF-8\" --args=\"-Djava.awt.headless=True\" --args=\""+outputName.substring(outputName.indexOf("/",2)+1)+"\""+" --max_real_time="+timeLimit+" --max_memory="+memoryLimit;
             Runtime.getRuntime().exec(command).waitFor();
             return out;
         }
         return null;
     }
 
-    public  static boolean judge(String code, String stdOut,String language, String in) throws Exception
+    public  static boolean judge(String code, String stdOut,String language, String in, int maxTime, int memoryLimit) throws Exception
     {
-        String out = exec(code,language,in);
+        String out = exec(code,language,in,maxTime, memoryLimit);
         stdOut = "/CSource/"+stdOut;
         //String stdOut = "/CSource/normal.out";
         File file = new File(out);//定义一个file对象，用来初始化FileReader
@@ -149,7 +149,7 @@ public class Compiler {
                 "    return 0;\n" +
                 "}";
         try{
-            boolean flag = Compiler.judge(code, "C","C","normal.in");
+            boolean flag = Compiler.judge(code, "C","C","normal.in",10000,10000000);
             if(flag)
             {
                 System.out.println("Success!");
