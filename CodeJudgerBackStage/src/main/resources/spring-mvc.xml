@@ -15,6 +15,7 @@
     <mvc:resources location="/demo/" mapping="/demo/**" />
     <mvc:resources location="/docs/" mapping="/docs/**" />
     <mvc:resources location="/codemirror/" mapping="/codemirror/**" />
+    <mvc:resources location="/markdown/" mapping="/markdown/**" />
 
     <!-- 扫描web相关的bean -->
     <context:component-scan base-package="ssm.controller"/>

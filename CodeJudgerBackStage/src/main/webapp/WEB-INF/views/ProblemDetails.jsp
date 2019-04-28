@@ -28,7 +28,6 @@
     <script src="${pageContext.request.contextPath}/markdown/marked.min.js"></script>
 
     <!-- Settings for CodeMirror-->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/doc/docs.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/lib/codemirror.css">
     <script src="${pageContext.request.contextPath}/codemirror/lib/codemirror.js"></script>
     <script src="${pageContext.request.contextPath}/codemirror/mode/javascript/javascript.js"></script>
@@ -485,7 +484,7 @@ function findSequence(goal) {
                                 <button class="btn btn-outline-success" type="submit" form="code" value="RunCode">Run Code</button>
                             </div>
                             <div class="col-lg-2 ml-auto">
-                                <button class="btn btn-gray-dark" type="submit" form="code" value="Submit">Submit</button>
+                                <button class="btn btn-gray-dark" type="submit" form="code" value="Submit" onclick="submitCode()">Submit</button>
                             </div>
                         </div>
 
@@ -500,35 +499,68 @@ function findSequence(goal) {
                                 gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
                             });
 
-
                             var inputTheme = document.getElementById("selectTheme");
                             var inputLanguage = document.getElementById("selectLanguage");
+                            function submitCode() {
+                                var code = editor.getDoc().getValue()
+                                alert(code)
+                                alert(typeof(code))
+                            }
+
                             function selectTheme() {
                                 var theme = inputTheme.options[inputTheme.selectedIndex].textContent;
                                 editor.setOption("theme", theme);
-                                // location.hash = "#" + theme;
                             }
                             function selectLanguage() {
                                 var language = inputLanguage.options[inputLanguage.selectedIndex].textContent;
                                 switch(language){
                                     case "C++":
                                         editor.setOption("mode", "text/x-c++src");
+                                        editor.setOption("value", "#include <iostream>\n" +
+                                            "#include<string>\n" +
+                                            "#include<vector>\n" +
+                                            "\n" +
+                                            "using namespace std;\n" +
+                                            "\n" +
+                                            "\n" +
+                                            "\n" +
+                                            "int main()\n" +
+                                            "{\n" +
+                                            "\t// Write Your Code\n" +
+                                            "\n" +
+                                            "\n" +
+                                            "\treturn 0;\n" +
+                                            "}")
                                         break;
                                     case "Java":
                                         editor.setOption("mode", "text/x-java");
+                                        editor.setOption("value", "import java.util.*;\n" +
+                                            "\n" +
+                                            "public class Main {\n" +
+                                            "    \n" +
+                                            "    // Write Your Code\n" +
+                                            "\n" +
+                                            "\n" +
+                                            "    public static void main(String[] args){\n" +
+                                            "\n" +
+                                            "    }\n" +
+                                            "}")
                                         break;
                                     case "Python":
                                         editor.setOption("mode", {name: "python",
                                             version: 2,
                                             singleLineStringErrors: false});
+                                        editor.setOption("value", "This is a python")
                                         break;
                                     case "Python3":
                                         editor.setOption("mode", {name: "python",
                                             version: 3,
                                             singleLineStringErrors: false});
+                                        editor.setOption("value", "This is a python3")
                                         break;
                                     case "C":
                                         editor.setOption("mode", "text/x-csrc");
+                                        editor.setOption("value", "This is a C")
                                         break;
                                     case "C#":
                                         editor.setOption("mode", "text/x-csharp");
@@ -574,7 +606,7 @@ function findSequence(goal) {
                             <div class="card-body">
                                 <h2 class="card-title"><%=pro.getProblemTypeID()%></h2>
                                 <div class="card-text" id="description">
-                                    This is a test description
+                                    ### This is a test description
                                 </div>
                                 <h5>Time Limit: <%=pro.getTimeLimit()%> &nbsp;&nbsp;&nbsp;&nbsp; Memory Limit: <%=pro.getMemoryLimit()%></h5>
                             </div>
@@ -582,8 +614,8 @@ function findSequence(goal) {
                             <script>
                                 var string = `<%=pro.getProblemContent()%>`;
                                 document.getElementById('description').innerHTML =
-                                    // marked('### A test for marked function');
                                     marked(string);
+
                             </script>
 
                         </div>
