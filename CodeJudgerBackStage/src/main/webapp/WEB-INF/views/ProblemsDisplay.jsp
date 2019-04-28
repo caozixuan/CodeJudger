@@ -8,47 +8,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<html>--%>
-    <%--<head>--%>
-    <%--<title>CodeJudger</title>--%>
-    <%--</head>--%>
-
-    <%--<body>--%>
-        <%--<%if (session.getAttribute("uuid")==null){%>--%>
-            <%--<div>--%>
-                <%--<a href="${pageContext.request.contextPath}/user/register">SIGN UP!</a>--%>
-                <%--<br><br>--%>
-                <%--<a href="${pageContext.request.contextPath}/user/login">SIGN IN!</a>--%>
-            <%--</div>--%>
-        <%--<%}else {%>--%>
-            <%--Welcome, <%= session.getAttribute("nickName")%>!--%>
-            <%--<br>--%>
-            <%--<a href="${pageContext.request.contextPath}/user/logout">LOG OUT</a>--%>
-        <%--<%}%>--%>
-
-        <%--<table border="1">--%>
-            <%--<tr>--%>
-                <%--<td>ID</td>--%>
-                <%--<td>TYPE</td>--%>
-                <%--<td>DIFFICULTY</td>--%>
-            <%--</tr>--%>
-            <%--<%--%>
-                <%--for (ssm.model.Problem pro: (List<ssm.model.Problem>)request.getAttribute("problems"))--%>
-                <%--{%>--%>
-            <%--<tr>--%>
-                <%--<td><%=pro.getUuid()%></td>--%>
-                <%--<td><%=pro.getProblemTypeID()%></td>--%>
-                <%--<td><%=pro.getProblemDifficulty()%></td>--%>
-            <%--</tr>--%>
-            <%--<%}--%>
-            <%--%>--%>
-        <%--</table>--%>
-
-    <%--</body>--%>
-
-<%--</html>--%>
-
-
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -67,8 +26,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/favicon.ico" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
     <title>CodeJudge - an online platform for programming and automatic judging</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+
     <script src="${pageContext.request.contextPath}/assets/js/require.min.js"></script>
     <script>
         requirejs.config({
@@ -78,14 +36,6 @@
     <!-- Dashboard Core -->
     <link href="${pageContext.request.contextPath}/assets/css/dashboard.css" rel="stylesheet" />
     <script src="${pageContext.request.contextPath}/assets/js/dashboard.js"></script>
-    <!-- c3.js Charts Plugin -->
-    <link href="${pageContext.request.contextPath}/assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
-    <script src="${pageContext.request.contextPath}/assets/plugins/charts-c3/plugin.js"></script>
-    <!-- Google Maps Plugin -->
-    <link href="${pageContext.request.contextPath}/assets/plugins/maps-google/plugin.css" rel="stylesheet" />
-    <script src="${pageContext.request.contextPath}/assets/plugins/maps-google/plugin.js"></script>
-    <!-- Input Mask Plugin -->
-    <script src="${pageContext.request.contextPath}/assets/plugins/input-mask/plugin.js"></script>
 </head>
 <body class="">
 <%--Login Module--%>
@@ -278,51 +228,10 @@
                     <div class="col-lg order-lg-first">
                         <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link active"><i class="fe fe-home"></i> Problems </a>
+                                <a href="${pageContext.request.contextPath}/problems/" class="nav-link"><i class="fe fe-home"></i> Problems </a>
                             </li>
                             <li class="nav-item">
-                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-box"></i> Rank </a>
-                                <div class="dropdown-menu dropdown-menu-arrow">
-                                    <a href="${pageContext.request.contextPath}/rank/" class="dropdown-item "> Rank of all users</a>
-                                    <a href="./charts.html" class="dropdown-item ">Charts</a>
-                                    <a href="./pricing-cards.html" class="dropdown-item ">Pricing cards</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-calendar"></i> Components</a>
-                                <div class="dropdown-menu dropdown-menu-arrow">
-                                    <a href="./maps.html" class="dropdown-item ">Maps</a>
-                                    <a href="./icons.html" class="dropdown-item ">Icons</a>
-                                    <a href="./store.html" class="dropdown-item ">Store</a>
-                                    <a href="./blog.html" class="dropdown-item ">Blog</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-file"></i> Pages</a>
-                                <div class="dropdown-menu dropdown-menu-arrow">
-                                    <a href="./profile.html" class="dropdown-item ">Profile</a>
-                                    <a href="./login.html" class="dropdown-item ">Login</a>
-                                    <a href="./register.html" class="dropdown-item ">Register</a>
-                                    <a href="./forgot-password.html" class="dropdown-item ">Forgot password</a>
-                                    <a href="./400.html" class="dropdown-item ">400 error</a>
-                                    <a href="./401.html" class="dropdown-item ">401 error</a>
-                                    <a href="./403.html" class="dropdown-item ">403 error</a>
-                                    <a href="./404.html" class="dropdown-item ">404 error</a>
-                                    <a href="./500.html" class="dropdown-item ">500 error</a>
-                                    <a href="./503.html" class="dropdown-item ">503 error</a>
-                                    <a href="./email.html" class="dropdown-item ">Email</a>
-                                    <a href="./empty.html" class="dropdown-item ">Empty page</a>
-                                    <a href="./rtl.html" class="dropdown-item ">RTL mode</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="./form-elements.html" class="nav-link"><i class="fe fe-check-square"></i> Forms</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./gallery.html" class="nav-link"><i class="fe fe-image"></i> Gallery</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./docs/index.html" class="nav-link"><i class="fe fe-file-text"></i> Documentation</a>
+                                <a href="${pageContext.request.contextPath}/rank/" class="nav-link"><i class="fe fe-bar-chart"></i> Rank </a>
                             </li>
                         </ul>
                     </div>
@@ -360,7 +269,7 @@
                                         {%>
                                         <tr>
                                             <td><span class="text-muted"><%=pro.getUuid()%></span></td>
-                                            <td><a href="#" class="text-inherit"><%=pro.getTitle()%></a></td>
+                                            <td><a href="${pageContext.request.contextPath}/problems/<%=pro.getUuid()%>" class="text-inherit"><%=pro.getTitle()%></a></td>
                                             <td>
                                                 <a class="icon" href="javascript:void(0)">
                                                     <i class="fe fe-edit"></i>
