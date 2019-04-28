@@ -217,10 +217,10 @@
                         </div>
                         <%if (session.getAttribute("uuid")==null){%>
                         <div>
-                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myLoginModal">
+                            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myLoginModal">
                                 SIGN IN!
                             </button>
-                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myRegisterModal">
+                            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myRegisterModal">
                                 SIGN UP!
                             </button>
                         </div>

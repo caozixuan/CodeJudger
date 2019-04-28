@@ -24,6 +24,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico" />
     <!-- Generated: 2018-04-06 16:27:42 +0200 -->
     <title>Homepage - tabler.github.io - a responsive, flat and full featured admin template</title>
+    <!-- Markdown Parser -->
+    <script src="${pageContext.request.contextPath}/markdown/marked.min.js"></script>
+
     <!-- Settings for CodeMirror-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/doc/docs.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/lib/codemirror.css">
@@ -33,6 +36,7 @@
     <script src="${pageContext.request.contextPath}/codemirror/addon/edit/matchbrackets.js"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/addon/hint/show-hint.css">
     <script src="${pageContext.request.contextPath}/codemirror/addon/hint/show-hint.js"></script>
+
     <!--add code mode for CodeMirror-->
     <script src="${pageContext.request.contextPath}/codemirror/mode/clike/clike.js"></script>
     <script src="${pageContext.request.contextPath}/codemirror/mode/python/python.js"></script>
@@ -40,6 +44,7 @@
     <script src="${pageContext.request.contextPath}/codemirror/mode/ruby/ruby.js"></script>
     <script src="${pageContext.request.contextPath}/codemirror/mode/swift/swift.js"></script>
     <script src="${pageContext.request.contextPath}/codemirror/mode/go/go.js"></script>
+    <script src="${pageContext.request.contextPath}/codemirror/addon/mode/simple.js"></script>
     <script src="${pageContext.request.contextPath}/codemirror/mode/rust/rust.js"></script>
     <script src="${pageContext.request.contextPath}/codemirror/mode/php/php.js"></script>
 
@@ -101,9 +106,22 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/codemirror/theme/zenburn.css">
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">--%>
+<%--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">--%>
     <script src="${pageContext.request.contextPath}/assets/js/require.min.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: '${pageContext.request.contextPath}',
+            shim: {
+                'bootstrap': ['jquery']
+            },
+            paths: {
+                'core': '${pageContext.request.contextPath}/assets/js/core',
+                'jquery': '${pageContext.request.contextPath}/assets/js/vendors/jquery-3.2.1.min'
+            }
+        });
+
+    </script>
     <!-- Dashboard Core -->
     <link href="${pageContext.request.contextPath}/assets/css/dashboard.css" rel="stylesheet" />
     <script src="${pageContext.request.contextPath}/assets/js/dashboard.js"></script>
@@ -116,9 +134,7 @@
     <!-- Input Mask Plugin -->
     <script src="${pageContext.request.contextPath}/assets/plugins/input-mask/plugin.js"></script>
 </head>
-<!--<style>
-    .CodeMirror {border: 1px solid black; font-size:13px}
-</style>-->
+
 <%Problem pro = (Problem)request.getAttribute("problem");%>
 <body class="">
 <%--Login Module--%>
@@ -250,10 +266,10 @@
                         </div>
                         <%if (session.getAttribute("uuid")==null){%>
                         <div>
-                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myLoginModal">
+                            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myLoginModal">
                                 SIGN IN!
                             </button>
-                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myRegisterModal">
+                            <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myRegisterModal">
                                 SIGN UP!
                             </button>
                         </div>
@@ -461,6 +477,17 @@ function findSequence(goal) {
   }
   return find(1, "1");
 }</textarea></form>
+                        <br>
+                        <div class="row row-cards">
+                            <div class="col-lg-8 ml-auto">
+                            </div>
+                            <div class="col-lg-2 ml-auto">
+                                <button class="btn btn-outline-success" type="submit" form="code" value="RunCode">Run Code</button>
+                            </div>
+                            <div class="col-lg-2 ml-auto">
+                                <button class="btn btn-gray-dark" type="submit" form="code" value="Submit">Submit</button>
+                            </div>
+                        </div>
 
                         <script>
                             var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
@@ -535,18 +562,6 @@ function findSequence(goal) {
                                 }
                             }
 
-                            // var choice = (location.hash && location.hash.slice(1)) ||
-                            //     (document.location.search &&
-                            //         decodeURIComponent(document.location.search.slice(1)));
-                            // if (choice) {
-                            //     inputTheme.value = choice;
-                            //     editor.setOption("theme", choice);
-                            // }
-                            // CodeMirror.on(window, "hashchange", function() {
-                            //     var theme = location.hash.slice(1);
-                            //     if (theme) { inputTheme.value = theme; selectTheme(); }
-                            // });
-
                             editor.setSize('100%', '100%');
 
                             var mac = CodeMirror.keyMap.default == CodeMirror.keyMap.macDefault;
@@ -557,19 +572,20 @@ function findSequence(goal) {
                     <div class="col-lg-6 order-lg-first">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="mt-0 mb-4"><%=pro.getProblemContent()%></h2>
-                                <p>Given a 2D array <code class="highlighter-rote">A</code>, each cell is 0 (representing sea) or 1 (representing land)</p>
-                                <p>A move consists of walking from one land square 4-directionally to another land square, or off the boundary of the grid.</p>
-                                <p>Return the number of land squares in the grid for which we <strong>cannot</strong> walk off the boundary of the grid in any number of moves.</p>
-                                <h2>Example1:</h2>
-                                <div class="alert alert-secondary" role="alert">
-                                    <p><strong>Input:</strong> [[0,0,0,0],[1,0,1,0],[0,1,1,0],[0,0,0,0]]</p>
-                                    <p><strong>Output:</strong> 3</p>
-                                    <p><strong>Explanation:</strong><br>
-                                        There are three 1s that are enclosed by 0s, and one 1 that isn't enclosed because its on the boundary.</p>
+                                <h2 class="card-title"><%=pro.getProblemTypeID()%></h2>
+                                <div class="card-text" id="description">
+                                    This is a test description
                                 </div>
                                 <h5>Time Limit: <%=pro.getTimeLimit()%> &nbsp;&nbsp;&nbsp;&nbsp; Memory Limit: <%=pro.getMemoryLimit()%></h5>
                             </div>
+
+                            <script>
+                                var string = `<%=pro.getProblemContent()%>`;
+                                document.getElementById('description').innerHTML =
+                                    // marked('### A test for marked function');
+                                    marked(string);
+                            </script>
+
                         </div>
                     </div>
                 </div>
