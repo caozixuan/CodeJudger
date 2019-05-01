@@ -10,7 +10,11 @@ public interface ISubmitDao {
     List<Submit> getAllSubmitsByUserID(String userID);
     List<Submit> getSuccessSubmitByUserID(String userID);
 
+   // List<Submit> getSubmitByUserIDAndType(String userID, String typeName);
+
     Submit getSubmitByID(String uuid);
+
+
 
 
 }

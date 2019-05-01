@@ -12,4 +12,6 @@ public interface IUserDao {
     User getUserByEmail(String email);
     void createUser(User user);
     List<User> getRankUsers(int amount);
+
+    void addScore(@Param("uuid")String uuid,@Param("score")int score);
 }

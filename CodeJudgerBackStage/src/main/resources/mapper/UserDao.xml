@@ -16,4 +16,7 @@
                                order by userinformation.totalSolveValue desc
                                LIMIT 0, #{amount}
     </select>
+    <update id="addScore">UPDATE userinformation set userinformation.totalSolveValue=userinformation.totalSolveValue+#{score} where userinformation.uuid in (SELECT user.userInformationID from user where user.uuid=#{uuid})
+        </update>
+
 </mapper>

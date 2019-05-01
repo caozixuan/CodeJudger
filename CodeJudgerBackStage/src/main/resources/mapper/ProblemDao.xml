@@ -6,5 +6,11 @@
 
     <select id="getAllProblems" resultType="Problem">SELECT * from problem</select>
     <select id="getProblemByID" resultType="Problem" parameterType="String">SELECT * from problem where uuid=#{uuid}</select>
+    <select id="getProblemByType" resultType="Problem" parameterType="String">SELECT problem.uuid,problem.problemTypeID,problem.timeLimit
+, problem.memoryLimit,problem.problemContent ,problem.problemDifficulty,problem.problemValue ,problem.totalSubmitCount,
+       problem.totalRightCount,problem.name from problem INNER JOIN problemtype
+              on problem.problemTypeID=problemtype.uuid
+where problemTypeName=#{typeName}</select>
+
 
 </mapper>

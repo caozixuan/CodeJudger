@@ -10,4 +10,6 @@ public interface IProblemDao {
     List<Problem> getAllProblems();
 
     Problem getProblemByID(String uuid);
+
+    List<Problem>  getProblemByType(String typeName);
 }
