@@ -269,7 +269,7 @@
                                         {%>
                                         <tr>
                                             <td><span class="text-muted"><%=pro.getUuid()%></span></td>
-                                            <td><a href="${pageContext.request.contextPath}/problems/<%=pro.getUuid()%>" class="text-inherit"><%=pro.getTitle()%></a></td>
+                                            <td><a href="${pageContext.request.contextPath}/problems/<%=pro.getUuid()%>" class="text-inherit"><%=pro.getName()%></a></td>
                                             <td>
                                                 <a class="icon" href="javascript:void(0)">
                                                     <i class="fe fe-edit"></i>

@@ -1,10 +1,12 @@
 package ssm.controller;
 
+import com.sun.deploy.net.HttpResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import ssm.model.Problem;
 import ssm.service.IProblemService;
 
@@ -30,13 +32,15 @@ public class ProblemController {
         return "ProblemDetails";
     }
 
-    @RequestMapping("/evaluate/{problemName}")
-    public String evaluateProblem(@PathVariable("problemName") String problemName){
-        return "Register";
+    @ResponseBody
+    @RequestMapping("/evaluate/{problemUuid}")
+    public String evaluateProblem(@PathVariable("problemUuid") String problemUUid, ModelMap map){
+        map.addAttribute("evaluateResult", "Good Job!");
+        return "Good job!";
     }
 
-    @RequestMapping("/execute/{problemName}")
-    public String executeProblem(@PathVariable("problemName") String problemName, String example){
+    @RequestMapping("/execute/{problemUuid}")
+    public String executeProblem(@PathVariable("problemUuid") String problemUuid, String example){
         return "Register";
     }
 

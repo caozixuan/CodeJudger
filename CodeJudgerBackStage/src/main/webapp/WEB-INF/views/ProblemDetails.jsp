@@ -330,7 +330,7 @@
             <div class="container">
                 <div class="page-header">
                     <h1 class="page-title">
-                        <%=pro.getTitle()%>
+                        <%=pro.getName()%>
                     </h1>
                 </div>
                 <div class="row row-cards">
@@ -453,7 +453,18 @@ function findSequence(goal) {
                             function submitCode() {
                                 var code = editor.getDoc().getValue()
                                 alert(code)
-                                alert(typeof(code))
+
+                                $.ajax({
+                                    url:'${pageContext.request.contextPath}/problems/evaluate/<%=pro.getUuid()%>',
+                                    type:'POST',
+                                    data:{'code': code},
+                                    success:function (data, textStatus, request) {
+                                        alert(request.responseText)
+                                    }
+                                })
+
+
+
                             }
 
                             function selectTheme() {

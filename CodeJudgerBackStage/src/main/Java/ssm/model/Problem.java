@@ -3,7 +3,7 @@ package ssm.model;
 public class Problem {
     String uuid;                     // 唯一标识
 
-    String title;                   // 问题的标题
+
 
     String problemTypeID;           // 对应问题的唯一标识
 
@@ -17,6 +17,7 @@ public class Problem {
     int totalSubmitCount;           // 提交总数
     int totalRightCount;            // 正确总数
 
+    String name;                   // 问题的标题
     public Problem() {
     }
 
@@ -24,8 +25,8 @@ public class Problem {
         this.uuid = uuid;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setProblemTypeID(String problemTypeID) {
@@ -64,8 +65,8 @@ public class Problem {
         return uuid;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
     public String getProblemTypeID() {

@@ -23,7 +23,7 @@ public class CompilerTest {
         submit.setCode(simpleCode);
         Compiler c = new Compiler();
         try{
-            c.compileCode(submit);
+            // c.compileCode(submit);
         }catch (Exception e)
         {
             e.printStackTrace();
