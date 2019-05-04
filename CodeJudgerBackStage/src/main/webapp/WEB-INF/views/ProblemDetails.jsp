@@ -452,19 +452,16 @@ function findSequence(goal) {
                             var inputLanguage = document.getElementById("selectLanguage");
                             function submitCode() {
                                 var code = editor.getDoc().getValue()
-                                alert(code)
-
+                                var dataToPost = {code: code, timeLimit: "<%=pro.getTimeLimit()%>", memoryLimit: "<%=pro.getMemoryLimit()%>"}
                                 $.ajax({
                                     url:'${pageContext.request.contextPath}/problems/evaluate/<%=pro.getUuid()%>',
                                     type:'POST',
-                                    data:{'code': code},
-                                    success:function (data, textStatus, request) {
+                                    data: dataToPost,
+                                    contentType: "application/x-www-form-urlencoded",
+                                    success:function (result, textStatus, request) {
                                         alert(request.responseText)
                                     }
                                 })
-
-
-
                             }
 
                             function selectTheme() {
