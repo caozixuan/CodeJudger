@@ -13,4 +13,6 @@
 where problemTypeName=#{typeName}</select>
 
 
+
+
 </mapper>
