@@ -79,6 +79,7 @@ public class CompilerCode {
 
     public  static String exec(String code, String language,String in, int timeLimit, int memoryLimit) throws Exception
     {
+        in = "/CSource/"+in;
         if(language.equals("C"))
         {
             String outputName = compile(code);

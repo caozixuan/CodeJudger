@@ -1,7 +1,5 @@
 package ssm.controller;
 
-import com.sun.deploy.net.HttpRequest;
-import com.sun.deploy.net.HttpResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -47,7 +45,7 @@ public class ProblemController {
 
         boolean judgeResult = false;
         try {
-            judgeResult = CompilerCode.judge(code, "C","C",problemUUid+".in", Integer.valueOf(timeLimit), Integer.valueOf(memoryLimit));
+            judgeResult = CompilerCode.judge(code, problemUUid+".out","C",problemUUid+".in", Integer.valueOf(timeLimit), Integer.valueOf(memoryLimit));
         }
         catch (Exception e) {
 
