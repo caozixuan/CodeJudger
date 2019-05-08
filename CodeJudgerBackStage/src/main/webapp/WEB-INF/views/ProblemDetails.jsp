@@ -108,7 +108,7 @@
     <script src="${pageContext.request.contextPath}/assets/js/require.min.js"></script>
     <script>
         requirejs.config({
-            baseUrl: '${pageContext.request.contextPath}',
+            baseUrl: '/',
             shim: {
                 'bootstrap': ['jquery']
             },
@@ -117,7 +117,6 @@
                 'jquery': '${pageContext.request.contextPath}/assets/js/vendors/jquery-3.2.1.min'
             }
         });
-
     </script>
     <!-- Dashboard Core -->
     <link href="${pageContext.request.contextPath}/assets/css/dashboard.css" rel="stylesheet" />

@@ -21,7 +21,7 @@ public class UserController {
 
     @RequestMapping("/{uuid}")
     public String userInformation(@PathVariable("uuid") String uuid){
-        return "userInformation";
+        return "Information";
     }
 
     @RequestMapping("/login")
