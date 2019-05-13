@@ -118,17 +118,18 @@ void open_files(FILE *log_fp, struct config *_config){
 
 // set id and group
 void set_id(FILE *log_fp, struct config *_config) {
-    if (_config->uid<0 && setuid(_config->uid) == -1 ) {
-        CHILD_ERROR_EXIT(SETID_FAILED);
-    }
 
-    if (_config->gid<0 && setgid(_config->gid) == -1 ) {
+    if (_config->gid<0 || setgid(_config->gid) == -1 ) {
         CHILD_ERROR_EXIT(SETID_FAILED);
     }
 
     // set process group
     gid_t group_list[] = {_config->gid};
     if (setgroups(sizeof(group_list)/ sizeof(gid_t), group_list) == -1) {
+        CHILD_ERROR_EXIT(SETID_FAILED);
+    }
+
+    if (_config->uid<0 || setuid(_config->uid) == -1 ) {
         CHILD_ERROR_EXIT(SETID_FAILED);
     }
 

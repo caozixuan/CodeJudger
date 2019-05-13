@@ -32,10 +32,11 @@ int _set_seccmp_rules(struct config * _config, bool allowWrite) {
 
     // create list
     int syscall_white_list[] = {
-            SCMP_SYS(read),
-            SCMP_SYS(fstat),
-            SCMP_SYS(mmap),
-            SCMP_SYS(munmap),
+            SCMP_SYS(read), SCMP_SYS(fstat),
+            SCMP_SYS(mmap), SCMP_SYS(mprotect),
+            SCMP_SYS(munmap), SCMP_SYS(uname),
+            SCMP_SYS(arch_prctl), SCMP_SYS(brk),
+            SCMP_SYS(access), SCMP_SYS(exit_group),
             SCMP_SYS(close), SCMP_SYS(readlink),
             SCMP_SYS(sysinfo), SCMP_SYS(write),
             SCMP_SYS(writev), SCMP_SYS(lseek)
@@ -51,28 +52,24 @@ int _set_seccmp_rules(struct config * _config, bool allowWrite) {
     }
 
     // add extra rule for execve
-    if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(execve), 1, SCMP_A0(SCMP_CMP_NE, (scmp_datum_t)(_config->exe_path))) != 0) {
+    if (seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(execve), 1, SCMP_A0(SCMP_CMP_EQ, (scmp_datum_t)(_config->exe_path))) != 0) {
         return LOAD_SECCOMP_FAILED;
     }
 
     if (!allowWrite) {
         // do not allow "w" and "rw" using open
-        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(open), 1, SCMP_CMP(1, SCMP_CMP_MASKED_EQ, O_WRONLY, O_WRONLY)) != 0) {
+        if (seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(open), 1, SCMP_CMP(1, SCMP_CMP_MASKED_EQ, O_WRONLY | O_RDWR, 0)) != 0) {
             return LOAD_SECCOMP_FAILED;
         }
-        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(open), 1, SCMP_CMP(1, SCMP_CMP_MASKED_EQ, O_RDWR, O_RDWR)) != 0) {
-            return LOAD_SECCOMP_FAILED;
-        }
-        // do not allow "w" and "rw" using openat
-        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(openat), 1, SCMP_CMP(2, SCMP_CMP_MASKED_EQ, O_WRONLY, O_WRONLY)) != 0) {
-            return LOAD_SECCOMP_FAILED;
-        }
-        if (seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(openat), 1, SCMP_CMP(2, SCMP_CMP_MASKED_EQ, O_RDWR, O_RDWR)) != 0) {
+        if (seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(openat), 1, SCMP_CMP(2, SCMP_CMP_MASKED_EQ, O_WRONLY | O_RDWR, 0)) != 0) {
             return LOAD_SECCOMP_FAILED;
         }
     }
     else {
         if (seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(open), 0) != 0) {
+            return LOAD_SECCOMP_FAILED;
+        }
+        if (seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(openat), 0) != 0) {
             return LOAD_SECCOMP_FAILED;
         }
         if (seccomp_rule_add(ctx, SCMP_ACT_ALLOW, SCMP_SYS(dup), 0) != 0) {
