@@ -1,16 +1,20 @@
 package ssm.controller;
 
-import com.sun.deploy.net.HttpResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
 import ssm.model.Problem;
 import ssm.service.IProblemService;
+import ssm.utils.CompilerCode;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -32,11 +36,21 @@ public class ProblemController {
         return "ProblemDetails";
     }
 
+
+    @PostMapping(value = "/evaluate/{problemUuid}")
     @ResponseBody
-    @RequestMapping("/evaluate/{problemUuid}")
-    public String evaluateProblem(@PathVariable("problemUuid") String problemUUid, ModelMap map){
-        map.addAttribute("evaluateResult", "Good Job!");
-        return "Good job!";
+    public boolean evaluateProblem(@PathVariable("problemUuid") String problemUUid, String code, String timeLimit, String memoryLimit){
+        System.out.println(timeLimit);
+        System.out.println(memoryLimit);
+
+        boolean judgeResult = false;
+        try {
+            judgeResult = CompilerCode.judge(code, problemUUid+".out","C",problemUUid+".in", Integer.valueOf(timeLimit), Integer.valueOf(memoryLimit));
+        }
+        catch (Exception e) {
+
+        }
+        return judgeResult;
     }
 
     @RequestMapping("/execute/{problemUuid}")

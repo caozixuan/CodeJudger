@@ -7,7 +7,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Compiler {
+public class CompilerCode {
 
     private static Pattern packagePattern = Pattern.compile("^[ ]*package.*;");
     private static Pattern classNamePattern = Pattern
@@ -79,6 +79,7 @@ public class Compiler {
 
     public  static String exec(String code, String language,String in, int timeLimit, int memoryLimit) throws Exception
     {
+        in = "/CSource/"+in;
         if(language.equals("C"))
         {
             String outputName = compile(code);
@@ -149,7 +150,7 @@ public class Compiler {
                 "    return 0;\n" +
                 "}";
         try{
-            boolean flag = Compiler.judge(code, "C","C","normal.in",10000,10000000);
+            boolean flag = CompilerCode.judge(code, "C","C","normal.in",10000,10000000);
             if(flag)
             {
                 System.out.println("Success!");

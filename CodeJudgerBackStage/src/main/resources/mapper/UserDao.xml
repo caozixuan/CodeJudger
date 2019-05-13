@@ -19,4 +19,16 @@
     <update id="addScore">UPDATE userinformation set userinformation.totalSolveValue=userinformation.totalSolveValue+#{score} where userinformation.uuid in (SELECT user.userInformationID from user where user.uuid=#{uuid})
         </update>
 
+    <update id="addSubmit">UPDATE userinformation set userinformation.totalSubmitCount=userinformation.totalSubmitCount+1 where userinformation.uuid in (SELECT user.userInformationID from user where user.uuid=#{uuid})
+    </update>
+
+    <update id="addRightSubmit">UPDATE userinformation set userinformation.totalRightCount=userinformation.totalRightCount+1 where userinformation.uuid in (SELECT user.userInformationID from user where user.uuid=#{uuid})
+    </update>
+
+    <select id="getSolveTypeNum" resultType="int">SELECT count(*) from problem where problem.uuid in (select submit.problemID
+                                            from submit where submit.userID=#{uuid} and submit.problemID in (select problem.uuid where
+                                            problem.problemTypeID=#{typeID}))</select>
+
+    <select id="getRecentSubmit" resultType="Submit">SELECT * from submit WHERE submit.userID=#{uuid} order by submit.submitDate</select>
+
 </mapper>

@@ -4,5 +4,5 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="ssm.dao.IProblemTypeDao">
 
-
+    <select id="getAllProblemTypes" resultType="ProblemType">SELECT * from problemtype</select>
 </mapper>

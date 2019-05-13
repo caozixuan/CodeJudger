@@ -11,7 +11,7 @@ public class EvaluationTool{
     @Resource
     private IProblemDao iProblemDao;
 
-    private Compiler compiler = new Compiler();
+    private CompilerCode compiler = new CompilerCode();
 
     private Judger judger = new Judger();
 /*
