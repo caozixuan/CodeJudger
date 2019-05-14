@@ -1,7 +1,5 @@
 package ssm.utils;
 
-import ssm.model.Submit;
-
 import java.io.*;
 import java.util.UUID;
 import java.util.regex.Matcher;
@@ -58,7 +56,7 @@ public class CompilerCode {
     }
 
 
-    public static String basePath = "/CSource/";
+    public static String basePath = "/project/JudgerSandbox/CSource/";
     public static String compile (String code) throws Exception
     {
         String uuid = UUID.randomUUID().toString();
@@ -73,13 +71,13 @@ public class CompilerCode {
         writer.close();
         String command = "gcc -o "+basePath+uuid+".out " + fileName;
         Runtime.getRuntime().exec(command).waitFor();
-        String outputName = basePath+uuid;
+        String outputName = "CSource/"+uuid;
         return outputName;
     }
 
     public  static String exec(String code, String language,String in, int timeLimit, int memoryLimit) throws Exception
     {
-        in = "/CSource/"+in;
+        in = "CSource/"+in;
         if(language.equals("C"))
         {
             String outputName = compile(code);
@@ -87,8 +85,34 @@ public class CompilerCode {
             String out = outputName+".output";
             //String in = "/CSource/normal.in";
             String error = outputName+".err";
-            String command = "/JudgerSandbox/output/libJudgerSandbox.so --exe_path="+exe+" --input_path="+in+" --output_path="+out+" --error_path="+error+" --max_real_time="+timeLimit+" --max_memory="+memoryLimit;
-            Runtime.getRuntime().exec(command).waitFor();
+            String docker1 = "docker start 3ba171ece612";
+            String docker2 = "docker exec 3ba171ece612 sh -c ";
+            Runtime.getRuntime().exec(docker1).waitFor();
+            String command = "output/libJudgerSandbox.so --exe_path="+exe+" --input_path="+in+" --output_path="+out+" --error_path="+error+" --max_real_time="+timeLimit+" --max_memory="+memoryLimit;
+          // command = docker2 + command;
+           // command = "docker exec 3ba171ece612 sh -c \'mkdir testtest'";
+          // System.out.println(command);
+           // String[] commands = {"docker","exec","3ba171ece612","/bin/sh","-c","mkdir testtest"};
+            String[] commands = {"docker","exec","3ba171ece612","sh","-c",command};
+            Process p = Runtime.getRuntime().exec(commands);
+            /*
+                        BufferedReader bufrIn = new BufferedReader(new InputStreamReader(p.getInputStream(), "UTF-8"));
+            BufferedReader bufrError = new BufferedReader(new InputStreamReader(p.getErrorStream(), "UTF-8"));
+            StringBuilder result = new StringBuilder();
+            // 读取输出
+            String line = null;
+            while ((line = bufrIn.readLine()) != null) {
+                result.append(line).append('\n');
+            }
+            while ((line = bufrError.readLine()) != null) {
+                result.append(line).append('\n');
+            }
+            System.out.println(result.toString());
+            System.out.println("test");
+             */
+
+            p.waitFor();
+            p.destroy();
             return out;
         }
         else if(language.equals("Java"))
@@ -109,7 +133,8 @@ public class CompilerCode {
     public  static boolean judge(String code, String stdOut,String language, String in, int timeLimit, int memoryLimit) throws Exception
     {
         String out = exec(code,language,in,timeLimit, memoryLimit);
-        stdOut = "/CSource/"+stdOut;
+        out = "/project/JudgerSandbox/"+out;
+        stdOut = "/project/JudgerSandbox/CSource/"+stdOut;
         //String stdOut = "/CSource/normal.out";
         File file = new File(out);//定义一个file对象，用来初始化FileReader
         FileReader reader = new FileReader(file);//定义一个fileReader对象，用来初始化BufferedReader
@@ -143,14 +168,11 @@ public class CompilerCode {
                 "\n" +
                 "int main()\n" +
                 "{\n" +
-                "    char input[100];\n" +
-                "    scanf(\"%s\", input);\n" +
-                "    printf(\"%s\\n\", input);\n" +
-                "    printf(\"Hello world\");\n" +
+                "    printf(\"Hello, World!\");\n" +
                 "    return 0;\n" +
                 "}";
         try{
-            boolean flag = CompilerCode.judge(code, "C","C","normal.in",10000,10000000);
+            boolean flag = CompilerCode.judge(code, "2.out","C","2.in",10000,10000000);
             if(flag)
             {
                 System.out.println("Success!");

@@ -9,4 +9,6 @@ public interface IProblemService {
     public List<Problem> getAllProblems();
 
     public Problem getProblemByUuid(String uuid);
+
+    public void submitRecord(String userUuid, String problemUuid, boolean isSucceessful, String code, String language);
 }

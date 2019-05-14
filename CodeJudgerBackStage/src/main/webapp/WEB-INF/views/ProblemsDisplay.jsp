@@ -96,9 +96,13 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col col-login mx-auto">
-                            <form class="card" action="" method="post">
+                            <form class="card" action="" method="post" action="${pageContext.request.contextPath}/user/addUser">
                                 <div class="card-body p-6">
-                                    <div class="card-title">Login to your account<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <div class="card-title">Sign up and join us<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Nickname</label>
+                                        <input type="text" class="form-control" id="exampleInputNickName" aria-describedby="emailHelp" placeholder="Enter nickname">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Email address</label>
@@ -107,18 +111,17 @@
                                     <div class="form-group">
                                         <label class="form-label">
                                             Password
-                                            <a href="./forgot-password.html" class="float-right small">I forgot password</a>
                                         </label>
-                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Enter password">
                                     </div>
                                     <div class="form-group">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" />
-                                            <span class="custom-control-label">Remember me</span>
+                                        <label class="form-label">
+                                            Confirm password
                                         </label>
+                                        <input type="password" class="form-control" id="exampleInputPassword2Confirm" placeholder="Confirm password">
                                     </div>
                                     <div class="form-footer">
-                                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                        <button type="submit" class="btn btn-primary btn-block">SIGN IN</button>
                                     </div>
                                 </div>
                             </form>

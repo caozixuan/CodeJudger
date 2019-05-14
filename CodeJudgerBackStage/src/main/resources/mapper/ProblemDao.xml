@@ -11,7 +11,8 @@
        problem.totalRightCount,problem.name from problem INNER JOIN problemtype
               on problem.problemTypeID=problemtype.uuid
 where problemTypeName=#{typeName}</select>
-
+    <update id="updateRightCount" parameterType="String">update problem set totalRightCount=totalRightCount+1 where uuid=#{uuid}</update>
+    <update id="updateTotalCount" parameterType="String">update problem set totalSubmitCount=totalSubmitCount+1 where uuid=#{uuid}</update>
 
 
 

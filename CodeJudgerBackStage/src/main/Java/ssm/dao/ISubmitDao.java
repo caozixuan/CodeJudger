@@ -14,7 +14,7 @@ public interface ISubmitDao {
 
     Submit getSubmitByID(String uuid);
 
-
+    void createSubmit(Submit submit);
 
 
 }

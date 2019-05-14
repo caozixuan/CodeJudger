@@ -39,17 +39,20 @@ public class ProblemController {
 
     @PostMapping(value = "/evaluate/{problemUuid}")
     @ResponseBody
-    public boolean evaluateProblem(@PathVariable("problemUuid") String problemUUid, String code, String timeLimit, String memoryLimit){
+    public boolean evaluateProblem(@PathVariable("problemUuid") String problemUuid, String code, String timeLimit, String memoryLimit, String userUuid, String language){
         System.out.println(timeLimit);
         System.out.println(memoryLimit);
 
         boolean judgeResult = false;
         try {
-            judgeResult = CompilerCode.judge(code, problemUUid+".out","C",problemUUid+".in", Integer.valueOf(timeLimit), Integer.valueOf(memoryLimit));
+            judgeResult = CompilerCode.judge(code, problemUuid+".out",language,problemUuid+".in", Integer.valueOf(timeLimit), Integer.valueOf(memoryLimit));
         }
         catch (Exception e) {
 
         }
+
+        problemService.submitRecord(userUuid, problemUuid, judgeResult, code, language);
+
         return judgeResult;
     }
 

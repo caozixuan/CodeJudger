@@ -12,4 +12,8 @@ public interface IProblemDao {
     Problem getProblemByID(String uuid);
 
     List<Problem>  getProblemByType(String typeName);
+
+    void updateRightCount(String uuid);
+
+    void updateTotalCount(String uuid);
 }

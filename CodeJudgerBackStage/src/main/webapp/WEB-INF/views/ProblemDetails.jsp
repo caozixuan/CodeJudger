@@ -155,9 +155,11 @@
                                             <span class="custom-control-label">Remember me</span>
                                         </label>
                                     </div>
+                                    <%--<input name="currentURL" value="<%=request.getContextPath()%>" type="hidden"/>--%>
                                     <div class="form-footer">
                                         <button id="submit" type="submit" class="btn btn-primary btn-block">LOG IN</button>
                                     </div>
+
                                 </div>
                             </form>
                         </div>
@@ -176,9 +178,13 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col col-login mx-auto">
-                            <form class="card" action="" method="post">
+                            <form class="card" action="" method="post" action="${pageContext.request.contextPath}/user/addUser">
                                 <div class="card-body p-6">
-                                    <div class="card-title">Login to your account<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    <div class="card-title">Sign up and join us<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Nickname</label>
+                                        <input type="text" class="form-control" id="exampleInputNickName" aria-describedby="emailHelp" placeholder="Enter nickname">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Email address</label>
@@ -187,18 +193,17 @@
                                     <div class="form-group">
                                         <label class="form-label">
                                             Password
-                                            <a href="./forgot-password.html" class="float-right small">I forgot password</a>
                                         </label>
-                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Enter password">
                                     </div>
                                     <div class="form-group">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" />
-                                            <span class="custom-control-label">Remember me</span>
+                                        <label class="form-label">
+                                            Confirm password
                                         </label>
+                                        <input type="password" class="form-control" id="exampleInputPassword2Confirm" placeholder="Confirm password">
                                     </div>
                                     <div class="form-footer">
-                                        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                        <button type="submit" class="btn btn-primary btn-block">SIGN IN</button>
                                     </div>
                                 </div>
                             </form>
@@ -428,10 +433,10 @@ function findSequence(goal) {
                         <div class="row row-cards">
                             <div class="col-lg-8 ml-auto">
                             </div>
-                            <div class="col-lg-2 ml-auto">
+                            <div class="col-lg-3 ml-auto">
                                 <button class="btn btn-outline-success" type="submit" form="code" value="RunCode">Run Code</button>
                             </div>
-                            <div class="col-lg-2 ml-auto">
+                            <div class="col-lg-3 ml-auto">
                                 <button class="btn btn-gray-dark" type="submit" form="code" value="Submit" onclick="submitCode()">Submit</button>
                             </div>
                         </div>
@@ -450,17 +455,24 @@ function findSequence(goal) {
                             var inputTheme = document.getElementById("selectTheme");
                             var inputLanguage = document.getElementById("selectLanguage");
                             function submitCode() {
-                                var code = editor.getDoc().getValue()
-                                var dataToPost = {code: code, timeLimit: "<%=pro.getTimeLimit()%>", memoryLimit: "<%=pro.getMemoryLimit()%>"}
-                                $.ajax({
-                                    url:'${pageContext.request.contextPath}/problems/evaluate/<%=pro.getUuid()%>',
-                                    type:'POST',
-                                    data: dataToPost,
-                                    contentType: "application/x-www-form-urlencoded",
-                                    success:function (result, textStatus, request) {
-                                        alert(request.responseText)
-                                    }
-                                })
+                                if ("<%=session.getAttribute("uuid")%>" == "null") {
+                                    alert("Please login before submitting code.")
+                                }
+                                else {
+                                    var code = editor.getDoc().getValue()
+                                    var dataToPost = {code: code, timeLimit: "<%=pro.getTimeLimit()%>", memoryLimit: "<%=pro.getMemoryLimit()%>", userUuid: "<%=session.getAttribute("uuid")%>",
+                                        language: inputLanguage}
+                                    $.ajax({
+                                        url:'${pageContext.request.contextPath}/problems/evaluate/<%=pro.getUuid()%>',
+                                        type:'POST',
+                                        data: dataToPost,
+                                        contentType: "application/x-www-form-urlencoded",
+                                        success:function (result, textStatus, request) {
+                                            alert(request.responseText)
+                                        }
+                                    })
+                                }
+
                             }
 
                             function selectTheme() {

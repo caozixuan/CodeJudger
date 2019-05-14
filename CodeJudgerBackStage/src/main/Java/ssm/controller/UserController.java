@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ssm.model.User;
 import ssm.service.IUserService;
@@ -19,10 +20,10 @@ public class UserController {
     private IUserService userService;
 
 
-    @RequestMapping("/{uuid}")
-    public String userInformation(@PathVariable("uuid") String uuid){
-        return "Information";
-    }
+//    @RequestMapping("/{uuid}")
+//    public String userInformation(@PathVariable("uuid") String uuid){
+//        return "Information";
+//    }
 
     @RequestMapping("/login")
     public String login(){
@@ -35,6 +36,7 @@ public class UserController {
         return "redirect:/problems/";
     }
 
+    // @RequestMapping(name = "/validateUser", method = RequestMethod.POST)
     @RequestMapping("/validateUser")
     public String validateUser(
             HttpServletRequest request,
@@ -47,7 +49,7 @@ public class UserController {
             return "redirect:/problems/";
         }
         else {
-            return "UserLogin";
+            return "ProblemsDisplay";
         }
     }
 
