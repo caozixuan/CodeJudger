@@ -54,7 +54,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col col-login mx-auto">
-                            <form class="card" method="post" action="${pageContext.request.contextPath}/user/validateUser">
+                            <form class="card" method="post" action="/user/validateUser">
                                 <div class="card-body p-6">
                                     <div class="card-title">Login to your account<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                                     </div>
@@ -96,23 +96,23 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col col-login mx-auto">
-                            <form class="card" action="" method="post" action="${pageContext.request.contextPath}/user/addUser">
+                            <form class="card" method="post" action="/user/addUser">
                                 <div class="card-body p-6">
                                     <div class="card-title">Sign up and join us<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Nickname</label>
-                                        <input type="text" class="form-control" id="exampleInputNickName" aria-describedby="emailHelp" placeholder="Enter nickname">
+                                        <input type="text" class="form-control" id="exampleInputNickName" aria-describedby="emailHelp" placeholder="Enter nickname" name="nickname">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email" name="email">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">
                                             Password
                                         </label>
-                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Enter password">
+                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Enter password" name="password">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">

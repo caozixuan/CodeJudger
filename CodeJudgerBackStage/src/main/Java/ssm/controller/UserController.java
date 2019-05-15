@@ -62,23 +62,26 @@ public class UserController {
     // Add a new user.
     @RequestMapping("/addUser")
     public String addUser(
-            @RequestParam("nickName")String nickName,
+            HttpServletRequest request,
+            @RequestParam("nickname")String nickname,
             @RequestParam("email")String email,
             @RequestParam("password")String password) {
         User user = new User();
         user.setUuid(UUID.randomUUID().toString().replaceAll("-", ""));
-        user.setNickName(nickName);
+        user.setNickName(nickname);
         user.setEmail(email);
         user.setPassword(password);
         // Code: 0-Success 1-DuplicateEmail
         int returnCode = userService.createUser(user);
         if (returnCode == 0) {
-            return "UserLogin";
+            request.getSession().setAttribute("uuid", user.getUuid());
+            request.getSession().setAttribute("nickName", user.getNickName());
+            return "redirect:/problems/";
         }
         else if (returnCode == 1) {
             System.out.println("Duplicate Email!");
-            return "Register";
+            return "ProblemsDisplay";
         }
-        return "Register";
+        return "redirect:/problems/";
     }
 }
