@@ -1,4 +1,8 @@
-<%--
+<%@ page import="ssm.model.Problem" %>
+<%@ page import="java.util.List" %>
+<%@ page import="ssm.model.User" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="ssm.model.UserInformation" %><%--
   Created by IntelliJ IDEA.
   User: rickyzhang
   Date: 2019/4/10
@@ -268,6 +272,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <% List<User> users = (List<User>)request.getAttribute("users");%>
+                                    <% List<UserInformation> userInformations = (List<UserInformation>)request.getAttribute("userInformations");%>
+                                    <% for (int i = 0; i<users.size(); i++ )
+                                    {%>
                                     <tr>
                                         <td class="text-center">
                                             <div class="avatar d-block" style="background-image: url(${pageContext.request.contextPath}/demo/faces/female/26.jpg)">
@@ -275,80 +283,27 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div>Elizabeth Martin</div>
+                                            <div><%=users.get(i).getNickName()%></div>
                                             <div class="small text-muted">
                                                 Registered: Mar 9, 2018
                                             </div>
                                         </td>
                                         <td class="text-center">
-                                            50
+                                            <%=userInformations.get(i).getTotalSolveValue()%>
                                         </td>
                                         <td class="text-center">
-                                            5
+                                            <%=userInformations.get(i).getTotalSubmitCount()%>
                                         </td>
                                         <td class="text-center">
-                                            10
+                                            <%=userInformations.get(i).getTotalRightCount()%>
                                         </td>
                                         <td class="text-center">
                                             <div class="mx-auto chart-circle chart-circle-xs" data-value="0.42" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">42%</div>
+                                                <div class="chart-circle-value"> <%=userInformations.get(i).getTotalRightCount()/100.0%></div>
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(${pageContext.request.contextPath}/demo/faces/female/17.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>Michelle Schultz</div>
-                                            <div class="small text-muted">
-                                                Registered: Feb 21, 2018
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            5
-                                        </td>
-                                        <td class="text-center">
-                                            6
-                                        </td>
-                                        <td class="text-center">
-                                            7
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.3" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">30%</div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <div class="avatar d-block" style="background-image: url(${pageContext.request.contextPath}/demo/faces/female/21.jpg)">
-                                                <span class="avatar-status bg-green"></span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div>Crystal Austin</div>
-                                            <div class="small text-muted">
-                                                Registered: Mar 28, 2018
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            1
-                                        </td>
-                                        <td class="text-center">
-                                            1
-                                        </td>
-                                        <td class="text-center">
-                                            1
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="mx-auto chart-circle chart-circle-xs" data-value="0.03" data-thickness="3" data-color="blue">
-                                                <div class="chart-circle-value">3%</div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <%}%>
                                     </tbody>
                                 </table>
                             </div>
