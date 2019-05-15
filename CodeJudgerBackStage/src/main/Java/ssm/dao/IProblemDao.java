@@ -16,4 +16,6 @@ public interface IProblemDao {
     void updateRightCount(String uuid);
 
     void updateTotalCount(String uuid);
+
+    int getProblemsCount();
 }

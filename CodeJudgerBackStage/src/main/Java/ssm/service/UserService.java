@@ -1,8 +1,11 @@
 package ssm.service;
 
 import org.springframework.stereotype.Service;
+import ssm.dao.IProblemDao;
+import ssm.dao.ISubmitDao;
 import ssm.dao.IUserDao;
 import ssm.dao.IUserInformationDao;
+import ssm.model.Submit;
 import ssm.model.User;
 import ssm.model.UserInformation;
 
@@ -17,6 +20,10 @@ public class UserService implements IUserService{
     private IUserDao iUserDao;
     @Resource
     private IUserInformationDao iUserInformationDao;
+    @Resource
+    private ISubmitDao submitDao;
+    @Resource
+    private IProblemDao problemDao;
 
     public User selectUser(String uuid){
         return iUserDao.getUserByID(uuid);
@@ -48,5 +55,25 @@ public class UserService implements IUserService{
                 return user;
         }
         return null;
+    }
+
+    public List<Submit> getSubmitsByUuid(String uuid) {
+        List<Submit> submits = submitDao.getAllSubmitsByUserID(uuid);
+        for (Submit submit: submits) {
+            submit.setProblemName(problemDao.getProblemByID(submit.getProblemID()).getName());
+        }
+        return submits;
+    }
+
+    public UserInformation getUserInfo(String uuid) {
+        return iUserInformationDao.getUserInformationByUserID(uuid);
+    }
+
+    public int getTotalProblemsCount() {
+        return problemDao.getProblemsCount();
+    }
+
+    public int getSolvedProblemsCount(String uuid) {
+        return submitDao.getSolvedProblemsCount(uuid);
     }
 }

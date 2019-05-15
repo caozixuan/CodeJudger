@@ -1,4 +1,6 @@
-<%--
+<%@ page import="ssm.model.Submit" %>
+<%@ page import="java.util.List" %>
+<%@ page import="ssm.model.UserInformation" %><%--
   Created by IntelliJ IDEA.
   User: zsh
   Date: 2019-05-08
@@ -62,7 +64,7 @@
                         <form>
                             <div class="row">
                                 <div class="col-auto">
-                                    <span class="avatar avatar-xl" style="background-image: url(demo/faces/female/9.jpg)"></span>
+                                    <span class="avatar avatar-xl" style="background-image: url(${pageContext.request.contextPath}demo/faces/female/9.jpg)"></span>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
@@ -90,16 +92,17 @@
                             <tbody>
                             <tr>
                                 <td><i class="fa fa-question"></i>&nbsp;&nbsp;Solved Question</td>
-                                <td><span class="tag tag-green tag-rounded">33 / 1000</span></td>
+                                <td><span class="tag tag-green tag-rounded"><%=request.getAttribute("solvedProblemsCount")%> / <%=request.getAttribute("totalProblemsCount")%></span></td>
                             </tr>
 
                             <tr>
                                 <td><i class="fa fa-cog"></i>&nbsp;&nbsp;Accepted Submission</td>
-                                <td><span class="tag tag-green tag-rounded">50 / 103</span></td>
+                                <%UserInformation currentUserInfo = (UserInformation) request.getAttribute("userInfo");%>
+                                <td><span class="tag tag-green tag-rounded"><%=currentUserInfo.getTotalRightCount()%> / <%=currentUserInfo.getTotalSubmitCount()%></span></td>
                             </tr>
                             <tr>
                                 <td><i class="fa fa-check"></i>&nbsp;&nbsp;Acceptance Rate</td>
-                                <td><span class="tag tag-azure tag-rounded">48.5 %</span></td>
+                                <td><span class="tag tag-azure tag-rounded"><%=((double) currentUserInfo.getTotalRightCount()) * 100 / currentUserInfo.getTotalSubmitCount()%> %</span></td>
                             </tr>
                             </tbody>
                         </table>
@@ -163,7 +166,6 @@
                             let nowDate = new Date();
                             let startDate = new Date(nowDate.getFullYear()-1, nowDate.getMonth(), nowDate.getDate());
                             let currentMonth = new Date(nowDate.getFullYear()-1, nowDate.getMonth(), nowDate.getDate());
-                            alert(startDate)
 
                             cal.init({
                                 itemSelector: "#cal-heatmap",
@@ -180,7 +182,7 @@
                                     return md.format("MMM");
                                 },
                                 subDomain:"day",
-                                data: "/heatmap/data.json",
+                                data: <%=request.getAttribute("submitsByUuidJSON")%>,
                                 start: startDate,
                                 cellSize: 10,
                                 range: 53,
@@ -208,21 +210,29 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Problem1</td>
-                                <td class="text-nowrap">May 6, 2018</td>
-                                <td><span class="tag tag-rounded tag-azure">Java</span>&nbsp;&nbsp;<span class="tag tag-rounded tag-green">Accepted</span></td>
+                            <%for(Submit submit: (List<Submit>) request.getAttribute("submits")) {%>
+                                <tr>
+                                <td class="text-center"><%=submit.getProblemName()%></td>
+                                <td class="text-center"><%=submit.getSubmitDate()%></td>
+                                <td class="text-center"><span class="tag tag-rounded tag-azure"><%=submit.getCodeLanguage()%></span>&nbsp;&nbsp;
+                                    <%if (submit.isPassed()) {%>
+                                        <span class="tag tag-rounded tag-green">Accepted</span></td>
+                                    <%}
+                                    else {%>
+                                        <span class="tag tag-rounded tag-red">Wrong Answer</span></td>
+                                    <% }%>
                             </tr>
-                            <tr>
-                                <td>Problem2</td>
-                                <td class="text-nowrap">Apr 19, 2018</td>
-                                <td><span class="tag tag-rounded tag-azure">C++</span>&nbsp;&nbsp;<span class="tag tag-rounded tag-red">Wrong Answer</span></td>
-                            </tr>
-                            <tr>
-                                <td>Problem3</td>
-                                <td class="text-nowrap">Nov 22, 2018</td>
-                                <td><span class="tag tag-rounded tag-azure">Python</span>&nbsp;&nbsp;<span class="tag tag-rounded tag-pink">Compile Error</span></td>
-                            </tr>
+                            <%}%>
+                            <%--<tr>--%>
+                                <%--<td>Problem2</td>--%>
+                                <%--<td class="text-nowrap">Apr 19, 2018</td>--%>
+                                <%--<td><span class="tag tag-rounded tag-azure">C++</span>&nbsp;&nbsp;<span class="tag tag-rounded tag-red">Wrong Answer</span></td>--%>
+                            <%--</tr>--%>
+                            <%--<tr>--%>
+                                <%--<td>Problem3</td>--%>
+                                <%--<td class="text-nowrap">Nov 22, 2018</td>--%>
+                                <%--<td><span class="tag tag-rounded tag-azure">Python</span>&nbsp;&nbsp;<span class="tag tag-rounded tag-pink">Compile Error</span></td>--%>
+                            <%--</tr>--%>
                             </tbody>
                         </table>
                     </div>

@@ -16,5 +16,5 @@ public interface ISubmitDao {
 
     void createSubmit(Submit submit);
 
-
+    int getSolvedProblemsCount(String uuid);
 }

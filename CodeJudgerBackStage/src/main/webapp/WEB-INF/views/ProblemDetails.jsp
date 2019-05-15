@@ -461,7 +461,7 @@ function findSequence(goal) {
                                     var dataToPost = {code: code, timeLimit: "<%=pro.getTimeLimit()%>", memoryLimit: "<%=pro.getMemoryLimit()%>", userUuid: "<%=session.getAttribute("uuid")%>",
                                         language: inputLanguage.value}
                                     $.ajax({
-                                        url:'${pageContext.request.contextPath}/problems/evaluate/<%=pro.getUuid()%>',
+                                        url:'/problems/evaluate/<%=pro.getUuid()%>',
                                         type:'POST',
                                         data: dataToPost,
                                         contentType: "application/x-www-form-urlencoded",

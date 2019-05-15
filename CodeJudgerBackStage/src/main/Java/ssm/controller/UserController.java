@@ -6,12 +6,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import ssm.model.Problem;
+import ssm.model.Submit;
 import ssm.model.User;
 import ssm.service.IUserService;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
+
+import org.json.JSONObject;
 
 @Controller
 @RequestMapping("/user")
@@ -57,6 +61,24 @@ public class UserController {
     @RequestMapping("/register")
     public String register(){
         return "Register";
+    }
+
+
+    @RequestMapping("/information")
+    public String information(HttpServletRequest request){
+        String uuid = String.valueOf(request.getSession().getAttribute("uuid"));
+        List<Submit> submits = userService.getSubmitsByUuid(uuid);
+        JSONObject obj = new JSONObject();
+        for (Submit submit: submits) {
+            obj.put(String.valueOf(submit.getSubmitDate().getTime()/1000), 1);
+        }
+        System.out.println(obj.toString());
+        request.setAttribute("submitsByUuidJSON", obj.toString());
+        request.setAttribute("submits", submits);
+        request.setAttribute("userInfo", userService.getUserInfo(uuid));
+        request.setAttribute("totalProblemsCount", userService.getTotalProblemsCount());
+        request.setAttribute("solvedProblemsCount", userService.getSolvedProblemsCount(uuid));
+        return "Information";
     }
 
     // Add a new user.

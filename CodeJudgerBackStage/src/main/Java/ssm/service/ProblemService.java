@@ -39,7 +39,7 @@ public class ProblemService implements IProblemService{
         submit.setProblemID(problemUuid);
         submit.setUserID(userUuid);
         submit.setCode(code);
-        submit.setSubmitDate(String.valueOf(new java.sql.Timestamp(System.currentTimeMillis())));
+        submit.setSubmitDate(new java.sql.Timestamp(System.currentTimeMillis()));
         submit.setPassed(isSucceessful);
         submit.setScore(problemDao.getProblemByID(problemUuid).getProblemValue());
         submit.setCodeLanguage(language);

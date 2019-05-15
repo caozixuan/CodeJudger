@@ -1,6 +1,8 @@
 package ssm.model;
 
 import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
 
 public class Submit {
     String uuid;                     // 提交唯一标识
@@ -9,10 +11,20 @@ public class Submit {
 
     String code;                     // 提交的代码（不确定是否要用这种形式）
 
-    String submitDate;                 // 提交日期
+    Timestamp submitDate;                 // 提交日期
     boolean isPassed;                // 是否通过
     double score;                    // 得分
     String codeLanguage;             // 编程语言
+
+    public String getProblemName() {
+        return problemName;
+    }
+
+    public void setProblemName(String problemName) {
+        this.problemName = problemName;
+    }
+
+    String problemName = "Default";
 
     public Submit(){
 
@@ -34,7 +46,7 @@ public class Submit {
         this.code = code;
     }
 
-    public void setSubmitDate(String submitDate) {
+    public void setSubmitDate(Timestamp submitDate) {
         this.submitDate = submitDate;
     }
 
@@ -67,7 +79,7 @@ public class Submit {
         return code;
     }
 
-    public String getSubmitDate() {
+    public Timestamp getSubmitDate() {
         return submitDate;
     }
 

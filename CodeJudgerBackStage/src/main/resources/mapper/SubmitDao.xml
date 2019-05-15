@@ -4,9 +4,10 @@
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
 <mapper namespace="ssm.dao.ISubmitDao">
 
-    <select id="getAllSubmitsByUserID" resultType="Submit" parameterType="String">SELECT * from submit WHERE userID=#{userID}</select>
+    <select id="getAllSubmitsByUserID" resultType="Submit" parameterType="String">SELECT * from submit WHERE userID=#{userID} ORDER BY submitDate DESC </select>
     <select id="getSuccessSubmitByUserID" resultType="Submit" parameterType="String">SELECT * from submit WHERE userID=#{userID} and isPassed=true</select>
     <select id="getSubmitByID" resultType="Submit" parameterType="String">SELECT * from submit WHERE uuid=#{userID}</select>
+    <select id="getSolvedProblemsCount" resultType="int" parameterType="String">SELECT COUNT(DISTINCT problemID) from submit WHERE userID=#{userID} AND isPassed=true</select>
     <insert id="createSubmit" parameterType="Submit">insert into submit values(#{uuid},#{problemID},#{userID},#{code},#{submitDate},#{isPassed},#{score},#{codeLanguage})</insert>
 
 
